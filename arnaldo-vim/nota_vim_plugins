@@ -1,0 +1,32 @@
+O Vim possui um excelente plugin open source que funciona como um gerenciador para outros plugins. Ele se chama: Vim-plug. Para instalá-lo em nossa máquina, basta copiar o arquivo plug.vim para a pasta ~/.vim/autoload/ com o seguinte comando:
+
+curl -fLo ~/.vim/autoload/plug.vim — create-dirs \
+https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+Este plugin nos permite baixar plugins disponíveis no GitHub diretamente na nossa máquina. Para isso, precisamos configurar o arquivo .vimrc. O arquivo fica localizado na sua home. Abra-o e copie a seguinte linha:
+
+call plug#begin(‘~/.vim/plugged’)
+Esta linha define que todos os plugins serão gravados dentro do diretório ~/.vim/plugged. Feito isso, adicionamos quais os plugins que queremos adicionar ao Vim. Para exemplificar, vamos adicionar dois plugins: vim-javascript e vim-jsx. Estes e muito mais plugins podem ser encontrados no site Vim Awesome.
+
+Para inseri-los, colocamos as seguintes linhas:
+
+Plug ‘pangloss/vim-javascript’
+Plug ‘mxw/vim-jsx’
+Ao final do arquivo, colocamos o seguinte comando:
+
+call plug#end()
+Depois de salvar o arquivo, basta acessar o Vim, entrar no modo interativo e executar:
+
+PlugInstall
+Ao executar, uma janela abrirá com o status de instalação dos plugins. Uma vez que eles forem instalados, já estão prontos. Basta fechar a janela de instalação e começar a usar.
+
+==================================================================================================================================================================
+
+Mas para que não seja necessário chamar o comando PlugInstall sempre que colocarmos um plugin novo, podemos fazer a seguinte alteração no .vimrc:
+
+    call plug#end()
+    autocmd VimEnter *
+    \ if !empty(filter(copy(g:plugs), ‘!isdirectory(v:val.dir)’))
+    \ | PlugInstall | q
+    \ | endif
+
+O que este código faz basicamente é verificar, sempre que o Vim for aberto, se existem plugins definidos no arquivo que ainda não foram instalados. Caso ele encontre, ele os instala automaticamente.

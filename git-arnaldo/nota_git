@@ -1,0 +1,5 @@
+
+
+git status                  #< uso para ver o que tem alterado
+git checkout -- .           #< uso para Voltarcaso caso algum commit errado 
+git clean -f -d             #< uso para DELETAR o que nao esta no git

@@ -1,0 +1,32 @@
+#010-Um excelente plugin open source se chama: Vim-plug. 
+#011-Para instalá-lo basta copiar o arquivo plug.vim para a pasta ~/.vim/autoload/ com o seguinte comando:
+curl -fLo ~/.vim/autoload/plug.vim — create-dirs \
+https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+#012-Configurar o arquivo .vimrc copie a seguinte linha:
+call plug#begin(‘~/.vim/plugged’)
+#012-obs-Plugins serão gravados dentro do diretório ~/.vim/plugged.
+
+#013-Agora pode colocar os plugins no arquivo conforme exmeplo abaixo:
+Plug ‘pangloss/vim-javascript’
+Plug ‘mxw/vim-jsx’
+
+#014-Ao final do arquivo, colocamos o seguinte comando:
+call plug#end()
+
+#015-Depois de salvar o arquivo, basta acessar o Vim, entrar no modo interativo e executar:
+PlugInstall
+
+Ao executar, uma janela abrirá com o status de instalação dos plugins. UmBasta fechar a janela de instalação e.
+
+====================================================================================================
+
+Mas para que não seja necessário chamar o comando PlugInstall sempre que colocarmos um plugin novo, podemos fazer a seguinte alteração no .vimrc:
+
+    call plug#end()
+    autocmd VimEnter *
+    \ if !empty(filter(copy(g:plugs), ‘!isdirectory(v:val.dir)’))
+    \ | PlugInstall | q
+    \ | endif
+
+O que este código faz basicamente é verificar, sempre que o Vim for aberto, se existem plugins definidos no arquivo que ainda não foram instalados. Caso ele encontre, ele os instala automaticamente.
