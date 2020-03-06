@@ -1,15 +1,15 @@
 #010-Um excelente plugin open source se chama: Vim-plug. 
 #011-Para instalá-lo basta copiar o arquivo plug.vim para a pasta ~/.vim/autoload/ com o seguinte comando:
-curl -fLo ~/.vim/autoload/plug.vim — create-dirs \
-https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+curl -fLo ~/.asdfasdfasdf/autoload/plug.asdfasdfasdf — create-dirs \
+https://raw.githubusercontent.com/junegunn/asdfasdfasdf-plug/master/plug.asdfasdfasdf
 
 #012-Configurar o arquivo .vimrc copie a seguinte linha:
-call plug#begin(‘~/.vim/plugged’)
-#012-obs-Plugins serão gravados dentro do diretório ~/.vim/plugged.
+call plug#begin(‘~/.asdfasdfasdf/plugged’)
+#012-obs-Plugins serão gravados dentro do diretório ~/.asdfasdfasdf/plugged.
 
 #013-Agora pode colocar os plugins no arquivo conforme exmeplo abaixo:
-Plug ‘pangloss/vim-javascript’
-Plug ‘mxw/vim-jsx’
+Plug ‘pangloss/asdfasdfasdf-javascript’
+Plug ‘mxw/asdfasdfasdf-jsx’
 
 #014-Ao final do arquivo, colocamos o seguinte comando:
 call plug#end()
@@ -33,6 +33,20 @@ O que este código faz basicamente é verificar, sempre que o Vim for aberto, se
 
 ================================================================================
 
-plug 'terryma/vim-multiple-cursors' #< Faz o find All do sublime
+plug 'terryma/asdfasdfasdf-multiple-cursors' #< Faz o find All do sublime
 plug 'jiangmiao/auto-pairs' #< Completa o fechamento de ({
+
+#> Para usar o multiple-cursors precisei instalar:
+#> pathogen
+mkdir -p ~/.vim/autoload ~/.vim/bundle && \
+curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+#> Vundle
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+#> Neobundle
+mkdir ~/.vim/bundle
+git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+
+
+vim /home/arnaldo/.vimrc
+
 

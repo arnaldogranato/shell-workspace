@@ -13,9 +13,7 @@ set nonu
 
 :split nome_arquivo #< Abre outro arquivo dividindo tela horizontal/vertical
 :vsplit             #< divide tela vertical
-
-#-Troca tela dividida
-'Crrl+ww'
+'Crrl+ww'           #< Troca tela dividida
 
 #-Arquivo em BINARIO
 :%!xxd       #< Binário
