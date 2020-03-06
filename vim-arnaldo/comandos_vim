@@ -11,9 +11,8 @@ set number
 set nu
 set nonu
 
-#-Abre outro arquivo dividindo tela horizontal/vertical
-split nome_arquivo
-vsplit nome_arquivo
+:split nome_arquivo #< Abre outro arquivo dividindo tela horizontal/vertical
+:vsplit             #< divide tela vertical
 
 #-Troca tela dividida
 'Crrl+ww'
