@@ -18,6 +18,11 @@ vsplit nome_arquivo
 #-Troca tela dividida
 'Crrl+ww'
 
+#-Arquivo em BINARIO
+:%!xxd       #< Binário
+:%!xxd -r    #< Volta binario
+
+
 #--Outros
 
 vim [opções] [arquivo]
