@@ -1,34 +1,24 @@
-#Vim-plug. 
-#0https://github.com/junegunn/vim-plug
+# P L U G I N S   D O   G I T H U B - Vim-plug. 
+# https://github.com/junegunn/vim-plug
+    PlugInstall #< Comando para carregar o plugim já instalado
+        Ao executar, uma janela abrirá com o status de instalação dos plugins. UmBasta fechar a janela de instalação e.
 
-PlugInstall #< Comando para carregar o plugim já instalado
-
-Ao executar, uma janela abrirá com o status de instalação dos plugins. UmBasta fechar a janela de instalação e.
-
+# Automatically install missing plugins on startup
+# https://github.com/junegunn/vim-plug/wiki/extra
+autocmd VimEnter *
+  \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \|   PlugInstall --sync | q
+  \| endif
 ================================================================================
 
-Mas para que não seja necessário chamar o comando PlugInstall sempre que colocarmos um plugin novo, podemos fazer a seguinte alteração no .vimrc:
 
-    call plug#end()
-    autocmd VimEnter *
-    \ if !empty(filter(copy(g:plugs), ‘!isdirectory(v:val.dir)’))
-    \ | PlugInstall | q
-    \ | endif
-
-O que este código faz basicamente é verificar, sempre que o Vim for aberto, se existem plugins definidos no arquivo que ainda não foram instalados. Caso ele encontre, ele os instala automaticamente.
-
-================================================================================
-
+# M E U S   P L U G I N S
 plug 'terryma/asdfasdfasdf-multiple-cursors' #< Faz o find All do sublime
-plug 'jiangmiao/auto-pairs' #< Completa o fechamento de ({
+    https://github.com/terryma/vim-multiple-cursors
+        https://github.com/VundleVim/Vundle.vim
+	https://github.com/tpope/vim-pathogen
+	https://github.com/Shougo/neobundle.vim
+plug 'jiangmiao/auto-pairs' #< Completa o fechamento de {(
+    https://github.com/jiangmiao/auto-pairs
 
-#> Para usar o multiple-cursors precisei instalar:
-#> pathogen
-mkdir -p ~/.vim/autoload ~/.vim/bundle && \
-curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
-#> Vundle
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-#> Neobundle
-mkdir ~/.vim/bundle
-git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 
