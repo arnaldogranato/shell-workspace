@@ -2,9 +2,10 @@
 N O T A S    P A R A   O   E D I T O R   V I M
 
 #--Visual
-#-Sem quebra de linha Word Wrap none:
 set nowrap
 set wrap
+set termencoding=iso-8859-1 "#> muda encode para iso"
+set encoding=utf8 "#> muda codifica��o para utf8"
 
 #-Linha numerada
 set number
@@ -13,13 +14,14 @@ set nonu
 
 :split nome_arquivo #< Abre outro arquivo dividindo tela horizontal/vertical
 :vsplit             #< divide tela vertical
-'Crrl+ww'           #< Troca tela dividida
+'Ctrl+ww'           #< Troca tela dividida
 
 #-Arquivo em BINARIO
 :%!xxd       #< Binário
 :%!xxd -r    #< Volta binario
 
-
+'Ctrl+v' selecionar o inicio das linhas e :s/^/TEXTO/ #< add teste no começo da linha
+ 
 #--Outros
 
 vim [opções] [arquivo]
@@ -288,5 +290,14 @@ Marcação de sintaxe
 :set syntax=perl: Força a usar a marcação de sintaxe do perl
 
 fonte:http://www.tocadoelfo.com.br/2009/06/99-comandos-do-vim-que-todo-programador_15.html
-
 -------------------------------------------------------------------------------------
+
+
+
+Este foi o comando I, que Insere um texto antes da seleção. Para inserir depois, o comando é A, de Anexar. Este fica de exercício para você brincar sozinho. O comando que fecha a trinca é o c (minúsculo), de Change, que troca o texto selecionado por outro.
+
+O comando c é muito útil para editar tabelas. Selecione uma coluna vertical no meio da linha com o Ctrl+V, digamos cinco linhas e cinco colunas. Tecle c, depois digite @@@@@. Novamente respire fundo, tecle Esc e PLIM!, a mágica acontece!
+
+A última dica da seleção em bloco é útil para quando o bloco precisar ir até o final de todas as linhas, mas estas têm tamanhos diversos. Nesse caso o bloco sairá incompleto se a última linha não a for a mais longa. Enquanto estiver movendo o cursor para marcar o bloco, aperte $ para expandir o bloco até o final de todas as linhas selecionadas.
+
+Ah! E antes tarde do que nunca, um aviso: este modo visual não faz parte do VI original, é uma característica presente no Vim, o Vi IMproved. Como ele é o "Vi" padrão da maioria das distros recentes, a seleção visual está disponível a praticamente todos os usuários.
