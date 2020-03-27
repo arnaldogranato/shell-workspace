@@ -1,0 +1,22 @@
+#--- T E R M I N A L   T M U X
+sudo apt-get intall tmux
+
+tmux ls          #-- mostra as sessoes ainda abertas
+tmux attach -t 1 #-- volta a sessao 
+
+#--- C O M A N D O S   T M U X
+<Ctrl-b> #-- Abre entrada de comando
+c        #-- nova aba
+n        #-- troca aba
+1,2,3..  #-- nabega nas abas
+w        #-- mostra as janelas pra vc escolher
+
+%        #-- divide tela na vertical'
+' ou "   #-- horizontal
+q        #-- mostra o numero das divisoes
+->(seta) #-- mostra       
+ctrl+<-  #-- ajusta o tamanho das janelas
+
+x        #-- fecha ou exit
+
+
