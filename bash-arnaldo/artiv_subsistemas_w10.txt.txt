@@ -1,0 +1,8 @@
+1 - Em configurações >> Atualização e Segurança >> Para Desenvolvedores >> Modeo Desenvolvedor;
+
+2 - Em Recursos do Windows >> Subsistema do Windows para linux.
+
+3 - Abrir o BASH e confirmar a intalação.
+
+
+

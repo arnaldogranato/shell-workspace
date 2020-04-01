@@ -19,4 +19,6 @@ ctrl+<-  #-- ajusta o tamanho das janelas
 
 x        #-- fecha ou exit
 
+#--- C O N F I G U R A Ç Õ E S
+set -g prefix C-Space
 
