@@ -1,24 +1,30 @@
-# P L U G I N S   D O   G I T H U B - Vim-plug. 
-# https://github.com/junegunn/vim-plug
-    PlugInstall #< Comando para carregar o plugim já instalado
-        Ao executar, uma janela abrirá com o status de instalação dos plugins. UmBasta fechar a janela de instalação e.
+#---- P L U G I N S   D O   G I T H U B - Vim-plug. 
 
-# Automatically install missing plugins on startup
-# https://github.com/junegunn/vim-plug/wiki/extra
+
+
+https://github.com/junegunn/vim-plug #-- Link para instalaçao do plugin
+
+:PlugInstall #-- DEPOIS DE INTALADO E DENTRO DO VIM, Comando para carregar o plugim já instalado. Ao executar, uma janela abrirá com o status de instalação dos plugins. UmBasta fechar a janela de instalação e.
+
+#-- Para automatizar o PlugInstall e startar os plugin automaticamente coloque este no seu .vimrc
+#-- https://github.com/junegunn/vim-plug/wiki/extra
 autocmd VimEnter *
   \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
   \|   PlugInstall --sync | q
   \| endif
-================================================================================
 
 
-# M E U S   P L U G I N S
-plug 'terryma/asdfasdfasdf-multiple-cursors' #< Faz o find All do sublime
-    https://github.com/terryma/vim-multiple-cursors
-        https://github.com/VundleVim/Vundle.vim
-	https://github.com/tpope/vim-pathogen
-	https://github.com/Shougo/neobundle.vim
-plug 'jiangmiao/auto-pairs' #< Completa o fechamento de {(
-    https://github.com/jiangmiao/auto-pairs
+
+#---- M E U S   P L U G I N S
+
+
+plug 'terryma/asdfasdfasdf-multiple-cursors' #-- Faz o find All do sublime (Ctrl+n)
+    #-- https://github.com/terryma/vim-multiple-cursors
+       #-- https://github.com/VundleVim/Vundle.vim
+	#-- https://github.com/tpope/vim-pathogen
+	#-- https://github.com/Shougo/neobundle.vim
+
+plug 'jiangmiao/auto-pairs' #-- Completa o fechamento de {(
+    #-- https://github.com/jiangmiao/auto-pairs
 
 
