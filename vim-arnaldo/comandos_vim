@@ -1,6 +1,14 @@
 #---- N O T A S    P A R A   O   E D I T O R   V I M
 
 
+#-- Opções ao abrir o vim
+
+-b #-- permite editar arquivo binario.
+-h #-- exibe opcoes do aplicativo.
++n #-- inicializa o cursor na n linha.
+-r #-- recupera a ultima versao do arquivo (o arquivo estava sendo editado e falta de energia).
+-R #-- abre arquivo apenas para leitura.
+
 #--- Navegação
 
     h, j, l , k #-- Use o h para navegar.
@@ -120,22 +128,17 @@
     !}fmt     #-- Use-o sempre que precisar alinhar todas as linhas na posição atual do seu cursor.
     :set autoindent #-- (TOP) Define o autoindent para sua sessão atual.Pensamentos finais
 
-
+    :%!XXd       #-- Vai para edito binario 
+    :%!XXd -r    #-- Volta binario
 
 #--- Configurações podem ser add no seu arquivo ~/.vimrc
 
-:set nowrap   #-- Retira quebra visual de linha
-:set wrap     #-- Coloca quebra visual de linha
-
-:Set number   #-- Coloca numero de linas (:set nu)
-:set nonumber #-- Retira o numero de linas (:set nonu)
-
-:set termencoding=iso-8859-1 #-- Para compatibilidade com seu terminal , (use utf8)
-:set encoding=utf8           #-- muda codificação para utf8
-
-:%!XXd       #-- Vai para edito binario 
-:%!XXd -r    #-- Volta binario
-
+:set nowrap                    " Retira quebra visual de linha
+:set wrap                      " Coloca quebra visual de linha
+:Set number                    " Coloca numero de linas (:set nu)
+:set nonumber                  " Retira o numero de linas (:set nonu)
+:set termencoding=iso-8859-1   " Para compatibilidade com seu terminal , (use utf8)
+:set encoding=utf8             " muda codificação para utf8
 :set linebreak                 " Quebra a linha sem quebrar a palavra
 :set nobackup                  " Não salva arquivos de backup~
 :set wildmode=longest,list     " Completa o comando com TAB igual o bash
@@ -158,19 +161,14 @@
 :set foldmethod=marker         " Define agrupamento por marcas
 :set foldmarker={,}            " Define marcas de agrupamento como { e }
 :set fileformat=unix           " Formato unix para executar scripts shell 
+:set ff=unix                   " Useu para ajustar o final de linha, newline
 
 
--b #-- permite editar arquivo binario.
--h #-- exibe opcoes do aplicativo.
-+n #-- inicializa o cursor na n-Ã©sima linha.
--r #-- recupera a ultima versao do arquivo (o arquivo estava sendo editado e falta de energia).
--R #-- abre arquivo apenas para leitura.
-
-CTRL+B      #-- voltar uma pÃ¡gina.
-CTRL+F      #-- avanÃ§ar uma pÃ¡gina.
+CTRL+B      #-- voltar uma página.
+CTRL+F      #-- avanÃ§ar uma página.
 F1          #-- exibir tela de ajuda.
 [n]+ENTER   #-- ir para n linhas abaixo da linha atual.
-[n]+.       #-- repetir o Ãºltimo comando que alterou o texto n vezes a partir da posiÃ§Ã£o atual do cursor.
+[n]+.       #-- repetir o ultimo comando que alterou o texto n vezes a partir da posiÃ§Ã£o atual do cursor.
 [n]+~+ENTER #-- inverter a caixa (case) dos n caracteres seguintes ao cursor.
 
 :X #-- criptografa o arquivo.
