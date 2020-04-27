@@ -1,6 +1,9 @@
 syntax on
 set number
 set nowrap
+set expandtab                 " Identa com espaços
+set tabstop=4                 " Quantidade de espaços por indentação
+set shiftwidth=4              " Define o tamanho da identação em 4 espaços   
 
 
 " https://github.com/junegunn/vim-plug
@@ -9,6 +12,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'jiangmiao/auto-pairs'
 Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-capslock'
+Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop'  }
 call plug#end()
 
 autocmd VimEnter *
