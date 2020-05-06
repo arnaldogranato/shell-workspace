@@ -1,8 +1,8 @@
-1 - Em configuraÁıes >> AtualizaÁ„o e SeguranÁa >> Para Desenvolvedores >> Modeo Desenvolvedor;
+1 - Habilitar o modo de desenvolvedor em: configura√ß√µes >> Atualiza√ß√£o e Seguran√ßa >> Para Desenvolvedores >> Marcar a Bolinha Modo de Desenvolvedor;
 
-2 - Em Recursos do Windows >> Subsistema do Windows para linux.
+2 - Bhbilitar o Recuso de subsistema em: Recursos do Windows >> Subsistema do Windows para linux.
 
-3 - Abrir o BASH e confirmar a intalaÁ„o.
+3 - Fazer a intala√ß√£o do UBUNTU X.XLTS usando MICROSOFT STORE, Abrir o BASH e confirmar a intala√ß√£o.
 
 
 
