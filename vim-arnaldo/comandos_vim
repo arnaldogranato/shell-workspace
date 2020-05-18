@@ -160,7 +160,7 @@
 :set foldcolumn=1              " Exibie coluna com + e - para agrupamentos
 :set foldmethod=marker         " Define agrupamento por marcas
 :set foldmarker={,}            " Define marcas de agrupamento como { e }
-:set fileformat=unix           " Formato unix para executar scripts shell 
+:set fileformat=unix           " Formato linux para executar scripts shell 
 :set ff=unix                   " Useu para ajustar o final de linha, newline
 
 
@@ -211,8 +211,8 @@ F1          #-- exibir tela de ajuda.
 :s/maria/joao/         #-- Substitui a primeira ocorrência de "maria" por "joao" na linha corrente
 :s/maria/joao/g        #-- Substitui todas as ocorrências de "maria" por "joao" na linha corrente
 :%s/maria/joao/g       #-- Substitui "maria" por "joao" em todo o arquivo
-:%s/\r//g              #-- Apaga retornos de carro do windows (\n)
-:%s/\r/\r/g            #-- Transforma os retornos de carro do windows (\n) em retornos do Linux (\r)
+:%s/\r//g              #-- Apaga retornos de carro/nova linha do windows (\n)
+:%s/\r/\r/g            #-- Transforma os retornos de carro/newline do windows (\n) em retornos do unix/Linux (\r)
 :%s#<[^>]\+>##g        #-- Apaga tags HTML mas mantêm o texto
 :%s/^\(.*\)\n\1$/\1/   #-- Apaga linhas repetidas
 Ctrl+a                 #-- Incrementa o número sob o cursor
