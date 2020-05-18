@@ -6,18 +6,18 @@ tmux attach -t 1 #-- volta a sessao
 
 #--- C O M A N D O S   T M U X
 <Ctrl-b> #-- Abre entrada de comando
-c        #-- nova aba
-n        #-- troca aba
-1,2,3..  #-- nabega nas abas
-w        #-- mostra as janelas pra vc escolher
+    c        #-- nova aba
+    n        #-- troca aba
+    1,2,3..  #-- nabega nas abas
+    w        #-- mostra as janelas pra vc escolher
 
-%        #-- divide tela na vertical'
-' ou "   #-- horizontal
-q        #-- mostra o numero das divisoes
-->(seta) #-- mostra       
-ctrl+<-  #-- ajusta o tamanho das janelas
+    %        #-- divide tela na vertical'
+    ' ou "   #-- horizontal
+    q        #-- mostra o numero das divisoes
+    ->(seta) #-- mostra       
+    ctrl+<-  #-- ajusta o tamanho das janelas
 
-x        #-- fecha ou exit
+    x        #-- fecha ou exit
 
 #--- C O N F I G U R A Ç Õ E S
 set -g prefix C-Space
