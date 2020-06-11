@@ -1,0 +1,47 @@
+===Comandinhos Shell===
+
+$ less                                         #--(é um cat paginado de cima para baixo)
+$ php -f nomedoarquivo                         #--(testa se o arquivo.php está com erro de sintaxe)
+$ ln -s /diretorio/origen /destino/nomedolink  #--(manta um link)
+$ grep dir                                     #--(imprime todas linhas que tem a palavra dir)
+$ skill -KILL -u nome_usuario                  #--(Mata todos usuários meu_usuario)
+$ sudo skill -KILL -u serviço_sistema          #--(Mata todos usuários do sistema_sistema)
+$ sudo chown -R nome_usuario aquinomedoarquivo #--(Como trocar grupo e dono de arquivo ou diretório)
+$ ls -la | wc -l                               #-- Mostra quantos arquivos tem aqui no diretório.
+$ date -r nomedoarquivo                        #-- hora, min e seg da criação
+$ tile #-- mosta a formatação do arquivo
+$ find arquivos/ -xdev -printf '%h\n' | sort | uniq -c | sort -k 1 -n     #-- Faz um rankig de consumo de inodes
+$ ConteudoDoComando | mutt -s"TituloDoEmail" -- meuamail@provedor.com.br  #-- Enviando conteúdo para o e-amil
+$ cat /var/log/mail.log | mutt -s"Teste" -- arnaldo@provedor.com.br       #-- teste email
+$ sudo passwd nomesobrenome         #--(altera senha do usuário)
+$ cat |grep -i TeXtO                #--(puxa tudo maiusculo e minusculo)
+$ps -efaa|grep nomeDoUsuario|wc -l  #--(Conta quantos processo estão rodando deste usuários).
+$ps -xa |grep nomeDoServicoOuRobo   #-- Informa se está rodando o servico x, este é estartado no rc.local só executar o comando dele lá
+$lsof nomeDoDiretório               #--(Informa quem está usando o diretório, e mostra problema de montagem também).
+$echo Conteudo > NomeDoArquivo      #--(Escreve no arquivo). 
+$pg_dump -s -U UsuarioDoBanco -f NomeDoArquivo NomeDoBanco     #--Gera um dump com a estrutura banco, dai é possivel fazer um < carga_para_sistema.sql
+#smbmount / /192.168.1.102/DIRWINDOWS /mnt/smb/DIRLINUX -o username=nome_usuario,password=minha_senha -o    #-- montagem sem cifs
+#mount.cifs / /192.168.1.102/DIRWINDOWS /mnt/smb/DIRLINUX -o username=nome_usuario,password=minha_senha -o  #-- montagem com Cifs
+#nmap -v localhost       #-- Mostra as portas/protocolo e serviço ssh http... disponíveis de dentro do servidor 
+$ps -efww|grep apache    #-- Mostra tudo que o usuário está fazendo mostra o processo pid processamento 
+d$speedtest-cli          #-- Teste de Velocidade Upload/Download
+$grep '('INF @1 tail -2 |grep T-K     #-- Usei para procurar duas linhas abaixo do infantil que fosse bilhete.
+$df -vh                               #-- Mostra o tamanho e espaço livre de um disco (-vhi #-- mostra inodes/indices geralmente estourados no /dados/flytour/portal).
+$du                                   #-- mostra o tamanho do conteudo
+$ lsb_release -a                      #-- Mostra versão do linux ubuntu
+$ route -n                            #-- Roteadores do servidor
+# w3m www.meuip.com.br                #-- acessa conteudo do site
+$base64 -d < /var/tmp/nomeArquivo     #--Decode base 64, encode deve ser -e
+$tar xzf nomedoarquivo                #-- Descomprime $gunzip arquivo.zip ou $unrar x arquivo.rar ou $bunzip arquivo.bz2 ou tar -jxvf arquivo.tar.bz2
+$tar czf nomedoarquivo                #-- comprime
+$wall                                 #--Prezados, favor SAIR DO SISTEMA para uma rapida manutencao. Att, Suporte (Ctrl+D)
+$sudo find arquivos/ -xdev -printf '%h\n' | sort | uniq -c | sort -k 1 -n     #-- Ranking dos diretórios que mais consomem inodes
+$grep /294 ARQUIVO_NOME.??? |grep -v 2                                        #-- Mostra todos os /294 NEGANDO o 2 antes
+$egrep '[0-9][=><]' NOME_ARQUIVO. |grep IF                                    #-- peguei tudo que tinha teste com numero colado
+$ps aux | sort -k 4 -r | head -n 2                                            #-- Ranking de quem está consumindo mais memória
+$traceroute 192.168.77.215                                                    #-- Mostra rota até o servidordestino 
+tkdiff arquivo1 arquivo2                                                      #-- só funciona se houver o XQuartz instalado e acessar o terminal do ssh abaixo
+ssh -X -Y usario@maquina                                                      #-- para usar o XQuartz no terminal e abrir arquivo ps
+for line in $(cat file.txt); do echo "$line" ; done                           #-- for em linhas de um arquivo
+$curl ifconfig.me                                                             #-- Mostra consulta o Ip externo
+$for i in "comando_lista_arquivos .referencia "; do vim -c "%s/\.referencia@/@/g|wq" $i; done
