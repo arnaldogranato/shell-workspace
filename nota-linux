@@ -26,7 +26,7 @@ $pg_dump -s -U UsuarioDoBanco -f NomeDoArquivo NomeDoBanco     #--Gera um dump c
 $ps -efww|grep apache    #-- Mostra tudo que o usuário está fazendo mostra o processo pid processamento 
 d$speedtest-cli          #-- Teste de Velocidade Upload/Download
 $grep '('INF @1 tail -2 |grep T-K     #-- Usei para procurar duas linhas abaixo do infantil que fosse bilhete.
-$df -vh                               #-- Mostra o tamanho e espaço livre de um disco (-vhi #-- mostra inodes/indices geralmente estourados no /dados/flytour/portal).
+$df -vh                               #-- Mostra o tamanho e espaço livre de um disco -vhi mostra inodes/indices 
 $du                                   #-- mostra o tamanho do conteudo
 $ lsb_release -a                      #-- Mostra versão do linux ubuntu
 $ route -n                            #-- Roteadores do servidor
