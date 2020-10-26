@@ -6,3 +6,6 @@ git clean -f -d             #< uso para DELETAR o que nao esta no git
 git config --global user.name arnaldogranato
 git config --global user.email arnaldogranato@gmail.com
 git config --global core.editor vim
+
+
+Guia Pratico: https://rogerdudler.github.io/git-guide/index.pt_BR.html
