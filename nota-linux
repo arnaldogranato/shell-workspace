@@ -44,4 +44,5 @@ tkdiff arquivo1 arquivo2                                                      #-
 ssh -X -Y usario@maquina                                                      #-- para usar o XQuartz no terminal e abrir arquivo ps
 for line in $(cat file.txt); do echo "$line" ; done                           #-- for em linhas de um arquivo
 $curl ifconfig.me                                                             #-- Mostra consulta o Ip externo
+htop                                                                          #-- Um top mais apresentável e funcional
 $for i in "comando_lista_arquivos .referencia "; do vim -c "%s/\.referencia@/@/g|wq" $i; done
