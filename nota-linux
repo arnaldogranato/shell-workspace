@@ -1,6 +1,7 @@
 ===Comandinhos Shell===
 
 $ less                                         #--(é um cat paginado de cima para baixo)
+$ tail -f nomearquivo.lot                      #--(mostra o rabo do arquivo em tempo real)
 $ php -f nomedoarquivo                         #--(testa se o arquivo.php está com erro de sintaxe)
 $ ln -s /diretorio/origen /destino/nomedolink  #--(manta um link)
 $ grep dir                                     #--(imprime todas linhas que tem a palavra dir)
