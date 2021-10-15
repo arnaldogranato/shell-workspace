@@ -1,6 +1,7 @@
 ===Comandinhos Shell===
 
 $ less                                         #--(é um cat paginado de cima para baixo)
+$ tail -f nomearquivo.lot                      #--(mostra o rabo do arquivo em tempo real)
 $ php -f nomedoarquivo                         #--(testa se o arquivo.php está com erro de sintaxe)
 $ ln -s /diretorio/origen /destino/nomedolink  #--(manta um link)
 $ grep dir                                     #--(imprime todas linhas que tem a palavra dir)
@@ -45,7 +46,17 @@ tkdiff arquivo1 arquivo2                                                      #-
 ssh -X -Y usario@maquina                                                      #-- para usar o XQuartz no terminal e abrir arquivo ps
 for line in $(cat file.txt); do echo "$line" ; done                           #-- for em linhas de um arquivo
 $curl ifconfig.me                                                             #-- Mostra consulta o Ip externo
+<<<<<<< HEAD
 $pdftk largepdfile.pdf burst                                                  #-- Separando pdf pg_0001.pdf, pg_0002.pdf, assim por diante.
 $pdftk 1.pdf 2.pdf 3.pdf cat output 123.pdf                                   #-- Unificando pdf 
 
 $for i in "comando_lista_arquivos .referencia "; do vim -c "%s/\.referencia@/@/g|wq" $i; done
+=======
+$htop                                                                          #-- Um top mais apresentável e funcional
+$sudo iptables -L -n                                                          #-- Lista IPs banidos no Linux
+$sudo fail2ban-client -i                                                      #-- Acesso ao cliente o Fail2ban
+    > status ssh                                                              #-- Infica o arquivo de log do Fail2ban e lista IPs Banidos
+    > set ssh unbanip 200.222.222.222                                         #-- Libera o IP que estava banido no Fail2ban
+    
+$for i in "comando_lista_arquivos .referencia "; do vim -c "%s/\.referencia@/@/g|wq" $i; done  #-- Exemplo de gabiarra que poderia ser feita apenas no vim, mas gostei.
+>>>>>>> 76d27f6b86da7fa7e78f47b72ae9d39a0fbd71a6
