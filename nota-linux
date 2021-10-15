@@ -32,9 +32,10 @@ $ lsb_release -a                      #-- Mostra versão do linux ubuntu
 $ route -n                            #-- Roteadores do servidor
 # w3m www.meuip.com.br                #-- acessa conteudo do site
 $base64 -d < /var/tmp/nomeArquivo     #--Decode base 64, encode deve ser -e
-$tar xzf nomedoarquivo                #-- Descomprime $gunzip arquivo.zip ou $unrar x arquivo.rar ou $bunzip arquivo.bz2 ou tar -jxvf arquivo.tar.bz2
-$tar czf nomedoarquivo                #-- comprime
+$tar xzf nomedoarquivo.tar            #-- Descomprime $gunzip arquivo.zip ou $unrar x arquivo.rar ou $bunzip arquivo.bz2 ou tar -jxvf arquivo.tar.bz2
+$tar czf nomedoarquivo.tar.gz dirxpt/ #-- comprime
 $wall                                 #--Prezados, favor SAIR DO SISTEMA para uma rapida manutencao. Att, Suporte (Ctrl+D)
+# route add -net 192.168.8.0/24 gw 192.168.77.1 eth0                          #-- Parte de uma configuração de rota/tunel para facilitar
 $sudo find arquivos/ -xdev -printf '%h\n' | sort | uniq -c | sort -k 1 -n     #-- Ranking dos diretórios que mais consomem inodes
 $grep /294 ARQUIVO_NOME.??? |grep -v 2                                        #-- Mostra todos os /294 NEGANDO o 2 antes
 $egrep '[0-9][=><]' NOME_ARQUIVO. |grep IF                                    #-- peguei tudo que tinha teste com numero colado
