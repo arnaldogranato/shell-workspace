@@ -1,0 +1,34 @@
+ #-- Comandos Básicos 
+
+git init                    #-- para iniciar o monitoramento de uma pasta
+git status                  #-- uso para ver o que tem alterado
+git add nome_arqdir         #-- add arquivo
+dit commit -m "texto"       #-- add comentário do que foi modificado
+git checkout -- .           #-- uso para Voltarcaso caso algum commit errado 
+git clean -f -d             #-- uso para DELETAR o que nao esta no git
+git push                    #-- sobe a motificações para o repositório
+git diff                    #-- oque está alterado a diferença
+git log                     #-- historico de commits
+git show id_commit          #-- mosta o que foi alterado no commit
+
+
+ #-- Configs
+
+git config --global user.name nome_usuario
+git config --global user.email nome_usuario@gmail.com
+git config --global core.editor vim
+
+
+ #-- Trabalhando com Branch
+
+git branch                    #-- Lista as branchs
+git checkout nome1_branch     #-- Entra da Branch nome_brancht
+git merge nome2_branch        #-- Unifica a nome2_branch na local
+git branch -D nome2_branch    #-- Deleta a brancht
+  
+git log --stat                #-- historico do projeto
+
+
+Oficial: git-scm.com
+Guia Pratico: https://rogerdudler.github.io/git-guide/index.pt_BR.html
+Dica: Extensão para o Visual Studio Code legal é o Gitignore Tamplates, pra facilitar o .gitignore
