@@ -32,3 +32,4 @@ git log --stat                #-- historico do projeto
 Oficial: git-scm.com
 Guia Pratico: https://rogerdudler.github.io/git-guide/index.pt_BR.html
 Dica: Extensão para o Visual Studio Code legal é o Gitignore Tamplates, pra facilitar o .gitignore
+Dica: Eu posso colocar uma exceção no .gitignore com (!) no início da linha, caso eu use um coringa (*) para varios arquivos.
