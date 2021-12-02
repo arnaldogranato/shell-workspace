@@ -1,4 +1,11 @@
- #-- Comandos Básicos 
+#-- Configs
+
+git config --global user.name nome_usuario
+git config --global user.email nome_usuario@gmail.com
+git config --global core.editor vim
+
+
+#-- Comandos Básicos 
 
 git init                    #-- para iniciar o monitoramento de uma pasta
 git status                  #-- uso para ver o que tem alterado
@@ -12,19 +19,14 @@ git log                     #-- historico de commits
 git show id_commit          #-- mosta o que foi alterado no commit
 
 
- #-- Configs
+#-- Trabalhando com Branch
 
-git config --global user.name nome_usuario
-git config --global user.email nome_usuario@gmail.com
-git config --global core.editor vim
-
-
- #-- Trabalhando com Branch
-
-git branch                    #-- Lista as branchs
-git checkout nome1_branch     #-- Entra da Branch nome_brancht
+git branch                    #-- lista as branchs
+git branch nome1_branch       #-- cria a branch
+git checkout nome1_branch     #-- entra na Branch 
 git merge nome2_branch        #-- Unifica a nome2_branch na local
-git branch -D nome2_branch    #-- Deleta a brancht
+git branch -d nome2_branch    #-- Deleta, (D) maiusculo é sem dó, minuscolo é se houver um merge já ok.
+
   
 git log --stat                #-- historico do projeto
 
