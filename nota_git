@@ -22,11 +22,15 @@ git show id_commit          #-- mosta o que foi alterado no commit
 
 #-- Trabalhando com Branch
 
-git branch                    #-- lista as branchs
-git branch nome1_branch       #-- cria a branch
-git checkout nome1_branch     #-- entra na Branch 
-git merge nome2_branch        #-- Unifica a nome2_branch na local
-git branch -d nome2_branch    #-- Deleta, (D) maiusculo é sem dó, minuscolo é se houver um merge já ok.
+git branch                                  #-- lista as branchs locais
+git branch -a                               #-- lista as branchs do repositório (github)
+git branch nome1_branch                     #-- cria a branch
+git checkout nome1_branch                   #-- entra na Branch 
+git merge nome2_branch                      #-- unifica a nome2_branch na local
+git branch -d nome2_branch                  #-- deleta local, (D) maiusculo é sem dó, minuscolo é se houver um merge já ok.
+git push -d origin nome_branch              #-- deleta a branch do repositório
+git push --set-upstream origin nome_branch  #-- add a branch no repositório github
+ 
 
   
 git log --stat                #-- historico do projeto
