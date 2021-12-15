@@ -10,14 +10,23 @@ git config --global credential.helper 'cache --timeout=3600' #-- Guarda o login 
 
 git init                    #-- para iniciar o monitoramento de uma pasta
 git status                  #-- uso para ver o que tem alterado
+git diff                    #-- mostra o que foi alterado em meu arquivo
 git add nome_arqdir         #-- add arquivo
-dit commit -m "texto"       #-- add comentário do que foi modificado
+git commit -m "texto"       #-- add comentário do que foi modificado
+git rebase -i HEAD~3        #-- unifica os commits em um só, na tela você escolhe o pick ou se vai descartar ou manter algum
+git stash                   #-- Salva sem ter que fazer commit, quando tem pouco trabalho feito ainda insignificante
+git stash apply             #-- Mostra algum aquivo que fivou sem commit na branch para terminarmos nosso trabalho e commitar
+git stash list              #-- lista os stash feitos com o ID de cada um
+git stash apply stash@{2}   #-- carrega o arquivo salvo na stash ID = 02
 git checkout -- .           #-- uso para Voltarcaso caso algum commit errado 
 git clean -f -d             #-- uso para DELETAR o que nao esta no git
 git push                    #-- sobe a motificações para o repositório
 git push -f                 #-- CUIDADO, vai forçar o push
 git diff                    #-- oque está alterado a diferença
 git log                     #-- historico de commits
+git log --stat              #-- historico do projeto
+git log --oneline           #-- mosta só a rach de cada commit
+git log -3                  #-- mostra os 3 ultimos commits
 git show id_commit          #-- mosta o que foi alterado no commit
 
 
@@ -27,16 +36,13 @@ git branch                                  #-- lista as branchs locais
 git branch -a                               #-- lista as branchs do repositório (github)
 git branch nome1_branch                     #-- cria a branch
 git checkout nome1_branch                   #-- entra na Branch 
-git merge nome2_branch                      #-- unifica a nome2_branch na local
+git merge nome2_branch                      #-- unifica a nome2_branch na local (master)
+git rebase nome2_branch                     #-- unifica, mas adiciona os commits da branc no historico da master
 git branch -d nome2_branch                  #-- deleta local, (D) maiusculo é sem dó, minuscolo é se houver um merge já ok.
 git push -d origin nome_branch              #-- deleta a branch do repositório
 git push --set-upstream origin nome_branch  #-- add a branch no repositório github
- 
-
-  
-git log --stat                      #-- historico do projeto
-git log --oneline                   #-- mosta a rach
-git checkout -b nome_banch cod_rach #-- acessa o backup de uma branch deletada, ai que mora o perigo
+git checkout -b nome_banch cod_rach         #-- acessa o backup de uma branch deletada, ai que mora o perigo
+git cherry-pick cod_rach                    #-- puxa o commit dessa rach para sua branch atual
 
 
 git rm -f nome_arquivo              #-- deleta o arquivo, e deixa de monitorar
@@ -52,5 +58,6 @@ git checkout nome_arquivo           #-- puxa o arquivo do ultimo commit e descrt
 
 Oficial: git-scm.com
 Guia Pratico: https://rogerdudler.github.io/git-guide/index.pt_BR.html
+Fabio Ruich: https://www.youtube.com/watch?v=i9UqgsXpqT4
 Dica: Extensão para o Visual Studio Code legal é o Gitignore Tamplates, pra facilitar o .gitignore
 Dica: Eu posso colocar uma exceção no .gitignore com (!) no início da linha, caso eu use um coringa (*) para varios arquivos.
