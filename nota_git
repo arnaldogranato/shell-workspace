@@ -15,6 +15,7 @@ dit commit -m "texto"       #-- add comentário do que foi modificado
 git checkout -- .           #-- uso para Voltarcaso caso algum commit errado 
 git clean -f -d             #-- uso para DELETAR o que nao esta no git
 git push                    #-- sobe a motificações para o repositório
+git push -f                 #-- CUIDADO, vai forçar o push
 git diff                    #-- oque está alterado a diferença
 git log                     #-- historico de commits
 git show id_commit          #-- mosta o que foi alterado no commit
@@ -33,7 +34,20 @@ git push --set-upstream origin nome_branch  #-- add a branch no repositório git
  
 
   
-git log --stat                #-- historico do projeto
+git log --stat                      #-- historico do projeto
+git log --oneline                   #-- mosta a rach
+git checkout -b nome_banch cod_rach #-- acessa o backup de uma branch deletada, ai que mora o perigo
+
+
+git rm -f nome_arquivo              #-- deleta o arquivo, e deixa de monitorar
+git rm --cached nome_arquivo        #-- não deleta o arquibo, e deixa de monitorar
+git reset --soft HEAD~1             #-- volta exatamente um commit, no lugar do HEAD eu posso passar o rach
+git reset --hard HEAD~1             #-- volta o ultimo commit mas o repositório pode ficar deferente, dai agente passa o push com -f, ma cuidado
+git reset HEAD^                     #-- volta o ultimo commit
+git revert HEAD~2                   #-- Volta o arquivo para o penultimo commit, mas manten em segundo o commit que estava
+git revert aAa11b7                  #-- Volta o arquivo da ranch, mas manten em segundo o commit que estava
+git checkout nome_arquivo           #-- puxa o arquivo do ultimo commit e descrta sua alterações atuaist
+
 
 
 Oficial: git-scm.com
