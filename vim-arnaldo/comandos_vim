@@ -1,5 +1,9 @@
 #---- N O T A S    P A R A   O   E D I T O R   V I M
 
+#-- Usei:
+
+:%s/\.//g    #-- Removi pos pontos, subistitui o pontos por nada/vazio, usar o \ para proteger caracteres.
+:%s/\\n/ + /g   #-- substitui a quebra de linha, juntando elas e colocando o sinal.   
 
 #-- Opções ao abrir o vim
 
