@@ -10,7 +10,12 @@ $ sudo skill -KILL -u serviço_sistema          #--(Mata todos usuários do sist
 $ sudo chown -R nome_usuario aquinomedoarquivo #--(Como trocar grupo e dono de arquivo ou diretório)
 $ ls -la | wc -l                               #-- Mostra quantos arquivos tem aqui no diretório.
 $ date -r nomedoarquivo                        #-- hora, min e seg da criação
-$ tile #-- mosta a formatação do arquivo
+$ tile                #-- mosta a formatação do arquivo
+$ locate nome_arquivo #-- deve estar instalado para localizar
+$ sudo updatedb       #-- Atualiza a lista de arquivos
+$ find / -mmin -1     #-- listar os arquivos que foram modificados a menos de 1 minuto
+$ find . -iname "meu-arquivo"                                             #-- localiza pelo nome com maiuscula ou minúscula -(i)name
+$ find / -type f -name “meu-arquivo”                                      #-- localiza arquivos com o nome meu-arquivo, excluindo diretórios  
 $ find arquivos/ -xdev -printf '%h\n' | sort | uniq -c | sort -k 1 -n     #-- Faz um rankig de consumo de inodes
 $ ConteudoDoComando | mutt -s"TituloDoEmail" -- meuamail@provedor.com.br  #-- Enviando conteúdo para o e-amil
 $ cat /var/log/mail.log | mutt -s"Teste" -- arnaldo@provedor.com.br       #-- teste email
