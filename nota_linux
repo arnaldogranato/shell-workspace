@@ -54,6 +54,7 @@ $curl ifconfig.me                                                             #-
 $curl -fsSL https://get.docker.com |bach                                      #-- Exemplo de intalação com curl usando bash se for zsh troca ali no final
 $pdftk largepdfile.pdf burst                                                  #-- Separando pdf pg_0001.pdf, pg_0002.pdf, assim por diante.
 $pdftk 1.pdf 2.pdf 3.pdf cat output 123.pdf                                   #-- Unificando pdf 
+$convert blue.jpg img_dir212.gif                                              #-- Converte imagem para GIF
 
 $for i in "comando_lista_arquivos .referencia "; do vim -c "%s/\.referencia@/@/g|wq" $i; done
 =======
