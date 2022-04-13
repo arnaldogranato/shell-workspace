@@ -12,6 +12,8 @@
 +n #-- inicializa o cursor na n linha.
 -r #-- recupera a ultima versao do arquivo (o arquivo estava sendo editado e falta de energia).
 -R #-- abre arquivo apenas para leitura.
+view nome_arquivo             #-- abre arquivo apenas para leitura.
+vimdiff nome_arq_1 nome_arq_2 #-- Aponta as diferenças
 
 #--- Navegação
 
@@ -98,6 +100,7 @@
 
 #-- Manipulação da Tela e Edição
 
+    :diffsplit filename #-- vimdiff na horizontal
     :sp nome_arquivo  #-- Abre aqruivo dividindo a tela do console horizontalmente para mostrar. (:split faz o mesmo)
     :vsp nome_arquivo #-- Abre arquivo dividiento o console verticalmente. (:vsplit)
     :bn #-- Este comando do Vim mudará seu editor para o próximo buffer
