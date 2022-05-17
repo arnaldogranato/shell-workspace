@@ -3,11 +3,13 @@
 git config --global user.name nome_usuario
 git config --global user.email nome_usuario@gmail.com
 git config --global core.editor vim
+git config --list                                      #-- lista o arquivo de configs
 git config --global credential.helper 'cache --timeout=3600' #-- Guarda o login em memória por 1 hora = 3600min 
 #-CUIDADO git config --global credential.helper store        #-- Guarda o login (usr/senha) em um arquivo 
 
 #-- Comandos Básicos 
 
+git clone https://githut... #-- clona, copia, puxa o repositorio
 git init                    #-- para iniciar o monitoramento de uma pasta
 git status                  #-- uso para ver o que tem alterado
 git diff                    #-- mostra o que foi alterado em meu arquivo
