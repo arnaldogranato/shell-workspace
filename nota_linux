@@ -1,5 +1,5 @@
 ===Comandinhos Shell===
-
+$ cp -rp ../nome-pasta .                       #--(copia o (r) diretório/pasta para o (.) local com (p) a mesma permissão)
 $ less                                         #--(é um cat paginado de cima para baixo)
 $ tail -f nomearquivo.lot                      #--(mostra o rabo do arquivo em tempo real)
 $ php -f nomedoarquivo                         #--(testa se o arquivo.php está com erro de sintaxe)
