@@ -1,7 +1,11 @@
-#--- ADICONANDO O PIP PATH DO WINDOWS
+# - ADICONANDO O PIP PATH DO WINDOWS
 
--Caminho: Meu Coputador >> Propriedades >> Config. Avençadas >> Variaveis de ambiente >> Path;
+- Caminho: Meu Coputador >> Propriedades >> Config. Avençadas >> Variaveis de ambiente >> Path;
 1 - Adicionar os caminhos das pastas python* e python*scripts;
 2 - Mover para baixo o caminho de WindowsApps "LOJA-Microsoft";
 3 - Fecha e abre novamente seu teminal ou editor;
 
+
+# - REMOVENDO PISCADA DE TERMINAL
+- Caminho: pesquisei config, alertas visuais para notificações de audio.
+ 
