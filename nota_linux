@@ -1,4 +1,4 @@
-===Comandinhos Shell===
+===Shell, Linux (Ubuntu)===
 $ cp -rp ../nome-pasta .                       #--(copia o (r) diretório/pasta para o (.) local com (p) a mesma permissão)
 $ less                                         #--(é um cat paginado de cima para baixo)
 $ tail -f nomearquivo.lot                      #--(mostra o rabo do arquivo em tempo real)
@@ -10,6 +10,7 @@ $ sudo skill -KILL -u serviço_sistema          #--(Mata todos usuários do sist
 $ sudo chown -R nome_usuario aquinomedoarquivo #--(Como trocar grupo e dono de arquivo ou diretório)
 $ ls -la | wc -l                               #-- Mostra quantos arquivos tem aqui no diretório.
 $ date -r nomedoarquivo                        #-- hora, min e seg da criação
+$ rm -v               #-- Remove o link, ATENÇÃO: NÃO colocar "/" no final, pois vai remover o conteudo do dir orig
 $ tile                #-- mosta a formatação do arquivo
 $ locate nome_arquivo #-- deve estar instalado para localizar
 $ sudo updatedb       #-- Atualiza a lista de arquivos
