@@ -53,10 +53,13 @@ tkdiff arquivo1 arquivo2                                                      #-
 ssh -X -Y usario@maquina                                                      #-- para usar o XQuartz no terminal e abrir arquivo ps
 for line in $(cat file.txt); do echo "$line" ; done                           #-- for em linhas de um arquivo
 $curl ifconfig.me                                                             #-- Mostra consulta o Ip externo
+$sudo ufw app list                                                            #-- Lista os apps que usam o firewall do linux ufw
 $curl -fsSL https://get.docker.com |bach                                      #-- Exemplo de intalação com curl usando bash se for zsh troca ali no final
 $pdftk largepdfile.pdf burst                                                  #-- Separando pdf pg_0001.pdf, pg_0002.pdf, assim por diante.
 $pdftk 1.pdf 2.pdf 3.pdf cat output 123.pdf                                   #-- Unificando pdf 
 $convert blue.jpg img_dir212.gif                                              #-- Converte imagem para GIF
+$sudo apt remove nome_app                                                     #-- Remove o app mas mantem os arquivos de config
+$sudo apt purg nome_app                                                       #-- Remove o app e os arquivos de confg também
 
 $for i in "comando_lista_arquivos .referencia "; do vim -c "%s/\.referencia@/@/g|wq" $i; done
 =======

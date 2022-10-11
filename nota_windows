@@ -1,3 +1,45 @@
+
+- CHECANDO E ATUALIZANDO O WSL PARA WSL2 (PS = powershell (execute como ADM))
+
+PS C:\Users\arnaldo> wsl -l -v
+  NAME            STATE           VERSION
+* Ubuntu-20.04    Running         1
+
+PS C:\Users\arnaldo> wsl --set-version Ubuntu-20.04 2
+Conversão em andamento. Isso pode levar alguns minutos...
+Para obter informações sobre as principais diferenças em relação ao WSL 2, visite https://aka.ms/wsl2
+WSL 2 requer uma atualização para seu componente kernel. Para obter mais informações, visite https://aka.ms/wsl2kernel
+
+-- Habilitar na BIOS o recurso de vurtalizáção do processador.
+
+-- Habilitar o recurso de Máquina Virtual, conforme https://aka.ms/wsl2kernel
+
+PS C:\WINDOWS\system32> dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+
+Ferramenta de Gerenciamento e Manutenção de Imagens de Implantação
+Versão: 10.0.19041.844
+
+Versão da Imagem: 10.0.19044.2006
+
+Habilitando recurso(s)
+[==========================100.0%==========================]
+A operação foi concluída com êxito.
+PS C:\WINDOWS\system32>
+
+
+-- Baixar o pacote de atualização do kernel do Linux em https://aka.ms/wsl2kernel
+
+    Baixar o pacote mais recente:
+        Pacote de atualização do kernel do Linux do WSL2 para computadores x64
+
+PS C:\Users\arnaldo> wsl --set-version Ubuntu-20.04 2
+Conversão em andamento. Isso pode levar alguns minutos...
+Para obter informações sobre as principais diferenças em relação ao WSL 2, visite https://aka.ms/wsl2
+Conversão concluída.                 # - DEPOIS DE HABILITAR NA BIOS, VIA PSHELL E INTALAR O KERNEL OK ! SHOW !
+PS C:\Users\arnaldo>
+
+
+
 # - ADICONANDO O PIP PATH DO WINDOWS
 
 - Caminho: Meu Coputador >> Propriedades >> Config. Avençadas >> Variaveis de ambiente >> Path;
