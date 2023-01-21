@@ -260,7 +260,7 @@ ggguG           #-- Coloca todo o texto em minúsculas
 :grep expressao *.php #-- retorna uma lista de arquivos .php que contenham a expressão informada
 gf                    #-- Abre o arquivo sob o cursor
 
-#--- Interação com o Linux
+#--- Interação com o Linux (abre o terminal bash)
 
 :!pwd #-- Executa o comando "pwd" e retorna para o Vim
 !!pwd #-- Executa o comando "pwd" e insere a saída no buffer
