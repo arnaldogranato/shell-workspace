@@ -1,331 +1,329 @@
-#---- N O T A S    P A R A   O   E D I T O R   V I M
+# --- N O T A S    P A R A   O   E D I T O R   V I M
 
-#-- Usei:
+# - Opções ao abrir o vim
 
-:%s/\.//g    #-- Removi pos pontos, subistitui o pontos por nada/vazio, usar o \ para proteger caracteres.
-:%s/\\n/ + /g   #-- substitui a quebra de linha, juntando elas e colocando o sinal.   
+view nome_arquivo             # - abre arquivo apenas para leitura.
+vimdiff nome_arq_1 nome_arq_2 # - Aponta as diferenças, no tmux nao há problema de cores
 
-#-- Opções ao abrir o vim
+-b # - permite editar arquivo binario.
+-h # - exibe opcoes do aplicativo.
++n # - inicializa o cursor na n linha.
+-r # - recupera a ultima versao do arquivo (o arquivo estava sendo editado e falta de energia).
+-R # - abre arquivo apenas para leitura.
 
--b #-- permite editar arquivo binario.
--h #-- exibe opcoes do aplicativo.
-+n #-- inicializa o cursor na n linha.
--r #-- recupera a ultima versao do arquivo (o arquivo estava sendo editado e falta de energia).
--R #-- abre arquivo apenas para leitura.
-view nome_arquivo             #-- abre arquivo apenas para leitura.
-vimdiff nome_arq_1 nome_arq_2 #-- Aponta as diferenças
+# -- Navegação
 
-#--- Navegação
-
-    h, j, l , k #-- Use o h para navegar.
-    j           #-- O comando j leva você para baixo e é um substituto para a tecla de seta para baixo.
-    H           #-- Este comando leva o cursor na região superior da tela.
-    M           #-- Colocará o cursor no meio da tela do Vim.
-    L           #-- A letra maiúscula coloca o cursor no final da tela.
-    0 ou [HOME] #-- Digitar 0 ou o botão [HOME] levará você ao início da linha.
-    ^           #-- (TOP) Para obter o primeiro caractere de uma linha.
-    $           #-- Este comando leva o cursor no final da linha atual.
-    b           #-- O comando b em minúscula permite retornar por tokens.
-    w           #-- Este comando ajuda você a avançar por tokens.
-    B           #-- A variante maiúscula de b permite retornar por palavras.
-    W           #-- Este comando permite avançar por palavras.
-    ctrl+u      #-- Este comando Vim é basicamente um comando Page Up.No entanto, ele move a tela pela metade e mantém a posição atual do cursor.
-    ctrl+d      #-- A variante Page Down do comando acima.Funciona da mesma maneira.
-    G           #-- Prefixe o comando G com um número para pular diretamente para um número de linha específico. Suponha que, se você tiver a numeração de linha ativada e estiver escrevendo um script de shell, poderá ir para a 10ª linha simplesmente digitando 10G.
-    '#' n_linha #-- (TOP) O levará diretamente a essa linha.
-    "           #-- Volta e leva você aonde você estava.
-    )           #-- Você pode acessar no início da frase a seguir com este comando.
-    (           #-- Ir para no início da frase anterior.
-    }           #-- Usado para ir para o início do próximo bloco de texto.
-    {           #-- Pega o cursor no início do bloco de texto anterior.Comandos do Vim para editar textos
+    h, j, l , k # - Use o h para navegar.
+    j           # - O comando j leva você para baixo e é um substituto para a tecla de seta para baixo.
+    H           # - Este comando leva o cursor na região superior da tela.
+    M           # - Colocará o cursor no meio da tela do Vim.
+    L           # - A letra maiúscula coloca o cursor no final da tela.
+    0 ou [HOME] # - Digitar 0 ou o botão [HOME] levará você ao início da linha.
+    ^           # - (TOP) Para obter o primeiro caractere de uma linha.
+    $           # - Este comando leva o cursor no final da linha atual.
+    b           # - O comando b em minúscula permite retornar por tokens.
+    w           # - Este comando ajuda você a avançar por tokens.
+    B           # - A variante maiúscula de b permite retornar por palavras.
+    W           # - Este comando permite avançar por palavras.
+    ctrl+u      # - Este comando Vim é basicamente um comando Page Up.No entanto, ele move a tela pela metade e mantém a posição atual do cursor.
+    ctrl+d      # - A variante Page Down do comando acima.Funciona da mesma maneira.
+    G           # - Prefixe o comando G com um número para pular diretamente para um número de linha específico. Suponha que, se você tiver a numeração de linha ativada e estiver escrevendo um script de shell, poderá ir para a 10ª linha simplesmente digitando 10G.
+    '#' n_linha # - (TOP) O levará diretamente a essa linha.
+    # -           # - Volta e leva você aonde você estava.
+    )           # - Você pode acessar no início da frase a seguir com este comando.
+    (           # - Ir para no início da frase anterior.
+    }           # - Usado para ir para o início do próximo bloco de texto.
+    {           # - Pega o cursor no início do bloco de texto anterior.Comandos do Vim para editar textos
 
 
-#--- Modo Comando
+# -- Modo Comando
 
-    i           #-- Modo de inserção. Agora você pode começar a digitar.
-    a           #-- Inserir texto, porém após o cursor.
-    I           #-- Textos no início da linha atual.
-    A           #-- Texto no final da minha linha atual.
-    o           #-- Pressionar a letra minúscula o cria uma nova linha logo após a linha atual em que você está.
-    O           #-- A variante maiúscula cria a nova linha antes da linha atual.
-    gf          #-- (TOP) Você pode usar este pequeno comando para abrir seus arquivos sob o cursor.
-    gi          #-- Reinicia o modo de inserção no último ponto de inserção que você usou.
-    wq          #-- Salvar e sair do Vim. Pode forçar algum impeditivo assim wq!.
-    ZZ          #-- (TOP) Zair e Zalvar, kkkk. O mesmo que o wq.
-    q!          #-- SAIR sem salvar seu conteúdo.
-    yy          #-- O comando yy permite copiar uma linha inteira.É algo que você costuma empregar durante seu tempo com o Vim.
-    yw          #-- Copiar uma palavra no editor.
-    y$          #-- Copiar textos da posição atual do cursor para o final de uma linha.
-    v           #-- Usado para selecionar um único caractere de cada vez em combinação com as teclas de movimento (setas / hjkl).
-    V           #-- Selecionar uma palavra, este comando destacará uma linha inteira.
-    p           #-- Colar o conteúdo.
-    d           #-- Deletar textos destacados.
-    dd          #-- Deletar uma linha inteira.
-    dw          #-- Deleta uma única palavra.
-    D           #--  Deleta cursor até o final da linha.
-    d0          #-- Deleta tudo da posição atual do cursor até o início da linha.
-    dgg         #-- Deleta tudo da posição atual do seu cursor até o início do arquivo.
-    dG          #-- Deleta do seu cursor até o final do arquivo.
-    x           #-- Excluir um único caractere.
-    u           #-- Desfazer a última operação. (é um Ctrl+z do vim) Combinando com um postfix, os usuários podem desfazer várias ações.
-    ctrl+r      #-- Refazer a última operação de desfazer. (é um Ctrl+y do vim)
-    .           #-- (TOP) Repete a última ação sempre que você precisar dessa funcionalidade.
-    cc          #-- Você pode usar o comando cc para alterar as linhas, limpando e entrando no modo de inserção ao mesmo tempo.O cursor é colocado no nível atual de recuo.Comandos úteis do Vim para substituir textos
-
-
-#--- Modo Visual
-
-    r       #-- Para alterar um único caractere.Siga-o com caracter e ele mudará o caractere atual sob o cursor com caractere.
-    R       #-- Modo de inserção substituindo oa carcteres.
-    ~       #-- Altera a posição de um caractere no seu documento.Siga-o com um número para inverter tantos caracteres.
-    t[char] #-- Digite t[caractere] para selecionar até, mas não incluindo, o próximo [caractere] em uma linha específica.
-    f[char] #-- Pressione f[caractere] para selecionar até e incluindo o próximo [caractere] em uma linha.
-    i[char] #-- Deseja selecionar tudo entre um parênteses ou outro caractere exclusivo?Digite i[caractere] para selecionar tudo que fica entre dois[caractere] consecutivos.
-    a[char] #-- (TOP) Este comando é idêntico ao anterior, mas inclui o[caractere] nas duas extremidades do texto.
+    i      # - Modo de inserção. Agora você pode começar a digitar.
+    a      # - Inserir texto, porém após o cursor.
+    I      # - Textos no início da linha atual.
+    A      # - Texto no final da minha linha atual.
+    o      # - Pressionar a letra minúscula o cria uma nova linha logo após a linha atual em que você está.
+    O      # - A variante maiúscula cria a nova linha antes da linha atual.
+    gf     # - (TOP) Você pode usar este pequeno comando para abrir seus arquivos sob o cursor.
+    gi     # - Reinicia o modo de inserção no último ponto de inserção que você usou.
+    wq     # - Salvar e sair do Vim. Pode forçar algum impeditivo assim wq!.
+    ZZ     # - (TOP) Zair e Zalvar, kkkk. O mesmo que o wq.
+    q!     # - SAIR sem salvar seu conteúdo.
+    yy     # - O comando yy permite copiar uma linha inteira.É algo que você costuma empregar durante seu tempo com o Vim.
+    yw     # - Copiar uma palavra no editor.
+    y$     # - Copiar textos da posição atual do cursor para o final de uma linha.
+    v      # - Usado para selecionar um único caractere de cada vez em combinação com as teclas de movimento (setas / hjkl).
+    V      # - Selecionar uma palavra, este comando destacará uma linha inteira.
+    p      # - Colar o conteúdo.
+    d      # - Deletar textos destacados.
+    dd     # - Deletar uma linha inteira.
+    dw     # - Deleta uma única palavra.
+    D      # -  Deleta cursor até o final da linha.
+    d0     # - Deleta tudo da posição atual do cursor até o início da linha.
+    dgg    # - Deleta tudo da posição atual do seu cursor até o início do arquivo.
+    dG     # - Deleta do seu cursor até o final do arquivo.
+    x      # - Excluir um único caractere.
+    u      # - Desfazer a última operação. (é um Ctrl+z do vim) Combinando com um postfix, os usuários podem desfazer várias ações.
+    ctrl+r # - Refazer a última operação de desfazer. (é um Ctrl+y do vim)
+    .      # - (TOP) Repete a última ação sempre que você precisar dessa funcionalidade.
+    cc     # - Você pode usar o comando cc para alterar as linhas, limpando e entrando no modo de inserção ao mesmo tempo.O cursor é colocado no nível atual de recuo.Comandos úteis do Vim para substituir textos
 
 
-#-- Pesquisa e substituição
+# -- Modo Visual, selecionar
 
-    :/mari[oa] #-- Pesquisar em grandes arquivos de texto maria ou mario no Vim. (use n para next)
-    :/\c       #-- (TOP) Pesquisam textos com distinção entre maiúsculas e minúsculas.
-    :?texto    #-- (TOP) Pesquisar textos anteriores para um determinado texto. 
-    :n         #-- Proximo de sua pesquisa next a frente.
-    :N         #--  Proximo voltando para o inicio do arquio.
-    :%s/testo antes/texto depois/g  #-- Utiliza expressão regular para pesquisar todas as ocorrências de 'tes tu' e substitui-o por 'texto' sem solicitar confirmação.
-    :%s/testo antes/texto depois/gc #-- Substitui-o 'tes tu' por 'texto' pedindo confirmação.
-    :s/testo antes/texto depois/g   #-- Substituirá apenas aqueles que estão na linha atual.
-    :bufdo /texto #-- (TOP) Procurar por texto em todos os buffers abertos no momento.
-    :g/string/d   #-- (TOP) Deleta todas as linhas que contenham string do seu documento.
+    r       # - Para alterar um único caractere.Siga-o com caracter e ele mudará o caractere atual sob o cursor com caractere.
+    R       # - Modo de inserção substituindo oa carcteres.
+    ~       # - Altera a posição de um caractere no seu documento.Siga-o com um número para inverter tantos caracteres.
+    t[char] # - Digite t[caractere] para selecionar até, mas não incluindo, o próximo [caractere] em uma linha específica.
+    f[char] # - Pressione f[caractere] para selecionar até e incluindo o próximo [caractere] em uma linha.
+    i[char] # - Deseja selecionar tudo entre um parênteses ou outro caractere exclusivo?Digite i[caractere] para selecionar tudo que fica entre dois[caractere] consecutivos.
+    a[char] # - (TOP) Este comando é idêntico ao anterior, mas inclui o[caractere] nas duas extremidades do texto.
 
 
-#-- Manipulação da Tela e Edição
+# - Pesquisa e substituição
 
-    :diffsplit filename #-- vimdiff na horizontal
-    :sp nome_arquivo  #-- Abre aqruivo dividindo a tela do console horizontalmente para mostrar. (:split faz o mesmo)
-    :vsp nome_arquivo #-- Abre arquivo dividiento o console verticalmente. (:vsplit)
-    :bn #-- Este comando do Vim mudará seu editor para o próximo buffer
-    :bp #-- Idêntico ao comando anterior, mas alterna para o buffer anterior em vez de avançar.
-    :bd #-- Use este comando Vim ao fechar um buffer específico.Salve seus dados usando os comandos apropriados do Vim.
-    :ls #-- Este é um dos comandos úteis do Vim que apresentará aos usuários uma lista de todos os buffers abertos.
-    :gt #-- O comando gt mostrará a próxima guia aberta por você.
-    :tabnew               #-- Você pode usar o comando: tabnew para criar uma nova guia e trabalhar com outro documento sem sair do arquivo atual.
-    :tabfirst             #-- O comando mostra a primeira guia que você abriu em uma sessão específica.
-    :tablast              #-- Igual ao comando anterior, mas em vez de mostrar a primeira guia, ele exibirá a última guia.
-    :tabm n(position)     #-- Este comando será útil sempre que a necessidade de reorganizar suas guias existentes.
-    :tabdo %s/foo/bar/g   #-- Você pode utilizar o comando sempre que desejar executar um comando em todas as guias abertas ao mesmo tempo.
-    :tab ball             #-- (TOP) Coloca cada arquivo aberto em uma :tab ball .
-    :new nome_arquivo.txt #-- Este é um dos comandos do Vim que permitem abrir um novo arquivo em uma nova janela sem sair do documento atual.
-    ctrl+ws #-- Dividir as janelas do Vim horizontalmente, este é o comando que você está procurando.
-    ctrl+wv #-- Dividirá verticalmente.
-    ctrl+ww #-- Alternar entre várias janelas diretamente do modo de comando.
-    ctrl+wq #-- Dair de uma janela específica.
-    ctrl+wh #-- Cursor para a janela esquerda.
-    ctrl+wl #-- Cursor para a janela direita.
-    ctrl+wj #-- Cursos para a janela abaixo da janela existente.
-    ctrl+wk #-- Cursor para a janela acima da atual.
-
-    :w #-- Comando salva o documento atual, mas não existe a sessão existente.
-    :q #-- Sai da sessão atual sem salvar suas alterações.Observe que você verá o erro E37 se tiver alterações não salvas. Use u para desfazer ou q! para forçar a saída.
-    :help [command] #-- O comando help realiza uma operação de pesquisa no comando digitado e mostra informações relevantes sobre eles diretamente no console.
-    :e nome_arquivo #-- Este comando abrirá um arquivo, se ele não existir ele vai criar.
-    :w nome_arquivo #-- Use este comando para salvar o documento existente diretamente em um novo arquivo chamado nome_arquivo.
-    :stop     #-- (TOP) Comando no modo de comando suspenderá sua sessão atual do Vim.Você também pode fazer isso pressionando ctrl + z ao mesmo tempo.
-    :browse e #-- (TOP) Use este comando sempre que desejar chamar o explorador de arquivos gráficos a partir do seu console Vim.
-    :%!fmt    #-- Escrever este comando alinhará cada linha do seu arquivo atual.
-    !}fmt     #-- Use-o sempre que precisar alinhar todas as linhas na posição atual do seu cursor.
-    :set autoindent #-- (TOP) Define o autoindent para sua sessão atual.Pensamentos finais
-
-    :%!XXd       #-- Vai para edito binario 
-    :%!XXd -r    #-- Volta binario
-
-#--- Configurações podem ser add no seu arquivo ~/.vimrc
-
-:set nowrap                    " Retira quebra visual de linha
-:set wrap                      " Coloca quebra visual de linha
-:Set number                    " Coloca numero de linas (:set nu)
-:set nonumber                  " Retira o numero de linas (:set nonu)
-:set termencoding=iso-8859-1   " Para compatibilidade com seu terminal , (use utf8)
-:set encoding=utf8             " muda codificação para utf8
-:set linebreak                 " Quebra a linha sem quebrar a palavra
-:set nobackup                  " Não salva arquivos de backup~
-:set wildmode=longest,list     " Completa o comando com TAB igual o bash
-:set ignorecase                " Ignora o case sensitive nas buscas
-:set smartcase                 " Se tiver alguma letra maiúscula, ativa o case sensitive
-:set gdefault                  " Sempre substitui todas as palavras, não só a primeira
-:set smartindent               " Auto-indenta
-:set expandtab                 " Identa com espaços
-:set tabstop=2                 " Quantidade de espaços por indentação
-:set shiftwidth=2              " Quantidade de espaços da auto-indentação
-:set guioptions-=T             " Deixa a GUI sem a toolbar
-:set autochdir                 " Vai pro diretório do arquivo aberto
-:set cursorline                " Mostra linha atual mais clara
-:set hlsearch                  " Termo procurado em destaque
-:set pumheight=15              " Máximo de palavras no popup de autocomplete
-:set completeopt=menu,preview  " Como mostrar as possibilidade de inserção
-:set spelllang=pt              " Escolhe o dicionário
-:set foldenable                " Habilita agrupamento de blocos
-:set foldcolumn=1              " Exibie coluna com + e - para agrupamentos
-:set foldmethod=marker         " Define agrupamento por marcas
-:set foldmarker={,}            " Define marcas de agrupamento como { e }
-:set fileformat=unix           " Formato linux para executar scripts shell 
-:set ff=unix                   " Useu para ajustar o final de linha, newline
+    :/mari[oa] # - Pesquisar em grandes arquivos de texto maria ou mario no Vim. (use n para next)
+    :/\c       # - (TOP) Pesquisam textos com distinção entre maiúsculas e minúsculas.
+    :?texto    # - (TOP) Pesquisar textos anteriores para um determinado texto. 
+    :n         # - Proximo de sua pesquisa next a frente.
+    :N         # -  Proximo voltando para o inicio do arquio.
+    :%s/testo antes/texto depois/g  # - Utiliza expressão regular para pesquisar todas as ocorrências de 'tes tu' e substitui-o por 'texto' sem solicitar confirmação.
+    :%s/testo antes/texto depois/gc # - Substitui-o 'tes tu' por 'texto' pedindo confirmação.
+    :s/testo antes/texto depois/g   # - Substituirá apenas aqueles que estão na linha atual.
+    :bufdo /texto # - (TOP) Procurar por texto em todos os buffers abertos no momento.
+    :g/string/d   # - (TOP) Deleta todas as linhas que contenham string do seu documento.
 
 
-CTRL+B      #-- voltar uma página.
-CTRL+F      #-- avanÃ§ar uma página.
-F1          #-- exibir tela de ajuda.
-[n]+ENTER   #-- ir para n linhas abaixo da linha atual.
-[n]+.       #-- repetir o ultimo comando que alterou o texto n vezes a partir da posiÃ§Ã£o atual do cursor.
-[n]+~+ENTER #-- inverter a caixa (case) dos n caracteres seguintes ao cursor.
+# - Manipulação da Tela e Edição
 
-:X #-- criptografa o arquivo.
+    :diffsplit filename # - vimdiff na horizontal
+    :sp nome_arquivo  # - Abre aqruivo dividindo a tela do console horizontalmente para mostrar. (:split faz o mesmo)
+    :vsp nome_arquivo # - Abre arquivo dividiento o console verticalmente. (:vsplit)
+    :bn # - Este comando do Vim mudará seu editor para o próximo buffer
+    :bp # - Idêntico ao comando anterior, mas alterna para o buffer anterior em vez de avançar.
+    :bd # - Use este comando Vim ao fechar um buffer específico.Salve seus dados usando os comandos apropriados do Vim.
+    :ls # - Este é um dos comandos úteis do Vim que apresentará aos usuários uma lista de todos os buffers abertos.
+    :gt # - O comando gt mostrará a próxima guia aberta por você.
+    :tabnew               # - Você pode usar o comando: tabnew para criar uma nova guia e trabalhar com outro documento sem sair do arquivo atual.
+    :tabfirst             # - O comando mostra a primeira guia que você abriu em uma sessão específica.
+    :tablast              # - Igual ao comando anterior, mas em vez de mostrar a primeira guia, ele exibirá a última guia.
+    :tabm n(position)     # - Este comando será útil sempre que a necessidade de reorganizar suas guias existentes.
+    :tabdo %s/foo/bar/g   # - Você pode utilizar o comando sempre que desejar executar um comando em todas as guias abertas ao mesmo tempo.
+    :tab ball             # - (TOP) Coloca cada arquivo aberto em uma :tab ball .
+    :new nome_arquivo.txt # - Este é um dos comandos do Vim que permitem abrir um novo arquivo em uma nova janela sem sair do documento atual.
+    ctrl+ws # - Dividir as janelas do Vim horizontalmente, este é o comando que você está procurando.
+    ctrl+wv # - Dividirá verticalmente.
+    ctrl+ww # - Alternar entre várias janelas diretamente do modo de comando.
+    ctrl+wq # - Dair de uma janela específica.
+    ctrl+wh # - Cursor para a janela esquerda.
+    ctrl+wl # - Cursor para a janela direita.
+    ctrl+wj # - Cursos para a janela abaixo da janela existente.
+    ctrl+wk # - Cursor para a janela acima da atual.
+
+    :w # - Comando salva o documento atual, mas não existe a sessão existente.
+    :q # - Sai da sessão atual sem salvar suas alterações.Observe que você verá o erro E37 se tiver alterações não salvas. Use u para desfazer ou q! para forçar a saída.
+    :help [command] # - O comando help realiza uma operação de pesquisa no comando digitado e mostra informações relevantes sobre eles diretamente no console.
+    :e nome_arquivo # - Este comando abrirá um arquivo, se ele não existir ele vai criar.
+    :w nome_arquivo # - Use este comando para salvar o documento existente diretamente em um novo arquivo chamado nome_arquivo.
+    :stop     # - (TOP) Comando no modo de comando suspenderá sua sessão atual do Vim.Você também pode fazer isso pressionando ctrl + z ao mesmo tempo.
+    :browse e # - (TOP) Use este comando sempre que desejar chamar o explorador de arquivos gráficos a partir do seu console Vim.
+    :%!fmt    # - Escrever este comando alinhará cada linha do seu arquivo atual.
+    !}fmt     # - Use-o sempre que precisar alinhar todas as linhas na posição atual do seu cursor.
+    :set autoindent # - (TOP) Define o autoindent para sua sessão atual.Pensamentos finais
+
+    :%!XXd       # - Vai para edito binario 
+    :%!XXd -r    # - Volta binario
+
+# -- Configurações podem ser adotadas durando o uso, ou fixas no '~/.vimrc' sem o ':'
+
+:set nowrap                    # - Retira quebra visual de linha
+:set wrap                      # - Coloca quebra visual de linha
+:Set number                    # - Coloca numero de linas (:set nu)
+:set nonumber                  # - Retira o numero de linas (:set nonu)
+:set ignorecase                # - Ignora minúsculos/maiúsculos nas buscas
+:set smartcase                 # - Ignora minúsculos/maiúsculos em buscas exceto quando uma letra msiúscula é usada
+:set termencoding=iso-8859-1   # - Para compatibilidade com seu terminal , (use utf8)
+:set encoding=utf8             # - muda codificação para utf8
+:set linebreak                 # - Quebra a linha sem quebrar a palavra
+:set nobackup                  # - Não salva arquivos de backup~
+:set wildmode=longest,list     # - Completa o comando com TAB igual o bash
+:set ignorecase                # - Ignora o case sensitive nas buscas
+:set smartcase                 # - Se tiver alguma letra maiúscula, ativa o case sensitive
+:set gdefault                  # - Sempre substitui todas as palavras, não só a primeira
+:set smartindent               # - Auto-indenta
+:set expandtab                 # - Identa com espaços
+:set tabstop=2                 # - Quantidade de espaços por indentação
+:set shiftwidth=2              # - Quantidade de espaços da auto-indentação
+:set guioptions-=T             # - Deixa a GUI sem a toolbar
+:set autochdir                 # - Vai pro diretório do arquivo aberto
+:set cursorline                # - Mostra linha atual mais clara
+:set hlsearch                  # - Termo procurado em destaque
+:set pumheight=15              # - Máximo de palavras no popup de autocomplete
+:set completeopt=menu,preview  # - Como mostrar as possibilidade de inserção
+:set spelllang=pt              # - Escolhe o dicionário
+:set foldenable                # - Habilita agrupamento de blocos
+:set foldcolumn=1              # - Exibie coluna com + e - para agrupamentos
+:set foldmethod=marker         # - Define agrupamento por marcas
+:set foldmarker={,}            # - Define marcas de agrupamento como { e }
+:set fileformat=unix           # - Formato linux para executar scripts shell 
+:set ff=unix                   # - Useu para ajustar o final de linha, newline
 
 
-#---- A V A N C A D O
+CTRL+B      # - voltar uma página.
+CTRL+F      # - avanÃ§ar uma página.
+F1          # - exibir tela de ajuda.
+[n]+ENTER   # - ir para n linhas abaixo da linha atual.
+[n]+.       # - repetir o ultimo comando que alterou o texto n vezes a partir da posiÃ§Ã£o atual do cursor.
+[n]+~+ENTER # - inverter a caixa (case) dos n caracteres seguintes ao cursor.
+
+:X # - criptografa o arquivo.
 
 
-#--- Macetinhos que mais uso
-:put =range(11,15)    #-- Faz uma lista sequencial/numerica, uso para numerar linhas ou como marcadores
-:for i in range(1,10) | put ='192.168.0.'.i | endfor #-- Faz uma lista de IP com o final de 1 a 10
+# --- A V A N C A D O
 
 
-#--- Busca
+# -- Macetinhos que mais uso
+:put =range(11,15)    # - Faz uma lista sequencial/numerica, uso para numerar linhas ou como marcadores
+:for i in range(1,10) | put ='192.168.0.'.i | endfor # - Faz uma lista de IP com o final de 1 a 10
 
-/palavra         #-- Procura por "palavra" do início para o fim
-?palavra         #-- Procura por "palavra" do fim para o início
-/Mari[oa]        #-- Procura por "Mario" ou "Maria"
-/\<pal           #-- Procura por expressões que começem com "pala" como, "palavra" ou "palíndromo"
-/ismo\>          #-- Procura por expressões que terminem com "ismo" como, "autismo"
-/\<para\>        #-- Procura pela palavra "para"
-/\<...\>         #-- Procura por todas as palavras com 3 letras
-/maria\|joao     #-- Procura por maria ou joao
-/\<\d\d\d\d\>    #-- Procura exatamente por 4 dígitos numéricos
-/^\n\{3}         #-- Procura por três linhas em branco
-:bufdo /palavra/ #-- Procura "palavra" em todos os arquivos abertos
 
-#--- Substituição
+# -- Busca
 
-:%s/antigo/novo/g      #-- Substitui todas as ocorrências de "antigo" por "novo" no arquivo
-:%s/antigo/novo/gw     #-- Substitui todas as ocorrências com confirmação
-:2,35s/antigo/novo/g   #-- Substitui todas as ocorrências entre as linhas 2 e 35
-:5,$s/antigo/novo/g    #-- Substitui todas as ocorrências da linha 5 até EOF (fim da linha)
-:%s/^/legal/g          #-- Substitui o começo de cada linha com "legal"
-:%s/$/Oh/g             #-- Substitui o fim de cada linha por "Oh"
-:%s/antigo/novo/gi     #-- Substitui "antigo" por "novo" desconsiderando maíusculas e/ou minúsculas
-:%s/ *$//g             #-- Apaga todos os espaços em branco
-:g/palavra/d           #-- Apaga todas as linhas contendo "palavra"
-:v/palavra/d           #-- Apaga todas as linhas que não contém "palavra"
-:s/maria/joao/         #-- Substitui a primeira ocorrência de "maria" por "joao" na linha corrente
-:s/maria/joao/g        #-- Substitui todas as ocorrências de "maria" por "joao" na linha corrente
-:%s/maria/joao/g       #-- Substitui "maria" por "joao" em todo o arquivo
-:%s/\r//g              #-- Apaga retornos de carro/nova linha do windows (\n)
-:%s/\r/\r/g            #-- Transforma os retornos de carro/newline do windows (\n) em retornos do unix/Linux (\r)
-:%s#<[^>]\+>##g        #-- Apaga tags HTML mas mantêm o texto
-:%s/^\(.*\)\n\1$/\1/   #-- Apaga linhas repetidas
-Ctrl+a                 #-- Incrementa o número sob o cursor
-Ctrl+x                 #-- Decrementa o número sob o cursor
-ggVGg?                 #-- Muda o texto usando Rot13
+/palavra         # - Procura por "palavra" do início para o fim
+?palavra         # - Procura por "palavra" do fim para o início
+/Mari[oa]        # - Procura por "Mario" ou "Maria"
+/\<pal           # - Procura por expressões que começem com "pala" como, "palavra" ou "palíndromo"
+/ismo\>          # - Procura por expressões que terminem com "ismo" como, "autismo"
+/\<para\>        # - Procura pela palavra "para"
+/\<...\>         # - Procura por todas as palavras com 3 letras
+/maria\|joao     # - Procura por maria ou joao
+/\<\d\d\d\d\>    # - Procura exatamente por 4 dígitos numéricos
+/^\n\{3}         # - Procura por três linhas em branco
+:bufdo /palavra/ # - Procura "palavra" em todos os arquivos abertos
 
-#--- Minúsculo/Maiúsculo
+# -- Substituição
 
-Vu              #-- Torna todos os caracteres da linha minúsculos
-VU              #-- Torna todos os caracteres da linha maiúsculos
-g~~             #-- Inverte os caracteres do texto inteiro
-vEU             #-- Coloca as letras da palavra em maiúsculas
-vE~~            #-- Inverte os caracteres da palavra selecionada
-ggguG           #-- Coloca todo o texto em minúsculas
-:set ignorecase #-- Ignora minúsculos/maiúsculos nas buscas
-:set smartcase  #-- Ignora minúsculos/maiúsculos em buscas exceto quando uma letra msiúscula é usada
-:%s/\<./\u&/g   #-- Coloca a primeira letra de cada palavra em maiúscula
-:%s/\<./\l&/g   #-- Coloca a primeira letra de cada palavra em minúscula
-:%s/.*/\u&      #-- Coloca a primeira letra de cada linha em maiúscula
-:%s/.*/\l&      #-- Coloca a primeira letra de cada linha em minúscula
+:%s/antigo/novo/g      # - Substitui todas as ocorrências de "antigo" por "novo" no arquivo
+:%s/antigo/novo/gw     # - Substitui todas as ocorrências com confirmação
+:2,35s/antigo/novo/g   # - Substitui todas as ocorrências entre as linhas 2 e 35
+:5,$s/antigo/novo/g    # - Substitui todas as ocorrências da linha 5 até EOF (fim da linha)
+:%s/^/legal/g          # - Substitui o começo de cada linha com "legal"
+:%s/$/Oh/g             # - Substitui o fim de cada linha por "Oh"
+:%s/antigo/novo/gi     # - Substitui "antigo" por "novo" desconsiderando maíusculas e/ou minúsculas
+:%s/ *$//g             # - Apaga todos os espaços em branco
+:g/palavra/d           # - Apaga todas as linhas contendo "palavra"
+:v/palavra/d           # - Apaga todas as linhas que não contém "palavra"
+:s/maria/joao/         # - Substitui a primeira ocorrência de "maria" por "joao" na linha corrente
+:s/maria/joao/g        # - Substitui todas as ocorrências de "maria" por "joao" na linha corrente
+:%s/maria/joao/g       # - Substitui "maria" por "joao" em todo o arquivo
+:%s/\r//g              # - Apaga retornos de carro/nova linha do windows (\n)
+:%s/\r/\r/g            # - Transforma os retornos de carro/newline do windows (\n) em retornos do unix/Linux (\r)
+:%s#<[^>]\+>##g        # - Apaga tags HTML mas mantêm o texto
+:%s/^\(.*\)\n\1$/\1/   # - Apaga linhas repetidas
+Ctrl+a                 # - Incrementa o número sob o cursor
+Ctrl+x                 # - Decrementa o número sob o cursor
+ggVGg?                 # - Muda o texto usando Rot13
 
-#--- Lendo/Gravando arquivos
+# -- Minúsculo/Maiúsculo
 
-:1,10 w arquivo     #-- Salva as linhas de 1 a 10 em "arquivo"
-:1,10 w >> arquivo  #-- Adiciona as linhas de 1 a 10 em "Arquivo"
-:r arquivo          #-- Insere o conteúdo de "arquivo" no atual
-:23r arquivo        #-- Insere o conteúdo de "arquivo" a partir da linha 23
+Vu              # - Torna todos os caracteres da linha minúsculos
+VU              # - Torna todos os caracteres da linha maiúsculos
+g~~             # - Inverte os caracteres do texto inteiro
+vEU             # - Coloca as letras da palavra em maiúsculas
+vE~~            # - Inverte os caracteres da palavra selecionada
+ggguG           # - Coloca todo o texto em minúsculas
+:set ignorecase # - Ignora minúsculos/maiúsculos nas buscas
+:set smartcase  # - Ignora minúsculos/maiúsculos em buscas exceto quando uma letra msiúscula é usada
+:%s/\<./\u&/g   # - Coloca a primeira letra de cada palavra em maiúscula
+:%s/\<./\l&/g   # - Coloca a primeira letra de cada palavra em minúscula
+:%s/.*/\u&      # - Coloca a primeira letra de cada linha em maiúscula
+:%s/.*/\l&      # - Coloca a primeira letra de cada linha em minúscula
 
-#--- Explorando arquivos
+# -- Lendo/Gravando arquivos
 
-:e .                  #-- Abre o gerenciador de arquivos integrado do Vim
-:Sex                  #-- Divide a janela e abre o gerenciador de arquivos integrado
-:browse e             #-- Abre o gerenciador de arquivos integrado na janela corrente
-:ls                   #-- Lista os buffers carregados
-:cd ..                #-- Move para a pasta superior
-:args                 #-- Lista os arquivos
-:args *.php           #-- Abre lista de arquivos
-:grep expressao *.php #-- retorna uma lista de arquivos .php que contenham a expressão informada
-gf                    #-- Abre o arquivo sob o cursor
+:1,10 w arquivo     # - Salva as linhas de 1 a 10 em "arquivo"
+:1,10 w >> arquivo  # - Adiciona as linhas de 1 a 10 em "Arquivo"
+:r arquivo          # - Insere o conteúdo de "arquivo" no atual
+:23r arquivo        # - Insere o conteúdo de "arquivo" a partir da linha 23
 
-#--- Interação com o Linux (abre o terminal bash)
+# -- Explorando arquivos
 
-:!pwd #-- Executa o comando "pwd" e retorna para o Vim
-!!pwd #-- Executa o comando "pwd" e insere a saída no buffer
-:sh   #-- Retorna temporariamente para o shell
-exit  #-- Retorna para o Vim
+:e .                  # - Abre o gerenciador de arquivos integrado do Vim
+:Sex                  # - Divide a janela e abre o gerenciador de arquivos integrado
+:browse e             # - Abre o gerenciador de arquivos integrado na janela corrente
+:ls                   # - Lista os buffers carregados
+:cd ..                # - Move para a pasta superior
+:args                 # - Lista os arquivos
+:args *.php           # - Abre lista de arquivos
+:grep expressao *.php # - retorna uma lista de arquivos .php que contenham a expressão informada
+gf                    # - Abre o arquivo sob o cursor
 
-#--- Alinhamento
+# -- Interação com o Linux (abre o terminal bash)
 
-:%!fmt #-- Alinha todas as linhas
-!}fmt  #-- Alinha todas as linhas a partir da posição corrente
-5!!fmt #-- Alinha as próximas 5 linhas
+:!pwd # - Executa o comando "pwd" e retorna para o Vim
+!!pwd # - Executa o comando "pwd" e insere a saída no buffer
+:sh   # - Retorna temporariamente para o shell
+exit  # - Retorna para o Vim
 
-#--- Abas
+# -- Alinhamento
 
-:tabnew             #-- Cria uma nova aba
-gt                  #-- Mostra a próxima aba
-:tabfirst           #-- Mostra a primeira aba
-:tablast            #-- Mostra a última aba
-:tabm n(posicao)    #-- Reorganiza as abas
-:tabdo %s/foo/bar/g #-- Executa um comando em todas as abas
-:tab ball           #-- Coloca todos os arquivos abertos em abas
+:%!fmt # - Alinha todas as linhas
+!}fmt  # - Alinha todas as linhas a partir da posição corrente
+5!!fmt # - Alinha as próximas 5 linhas
 
-#--- Divisão da janela do Vim
+# -- Abas
 
-:e arquivo              #-- Edita "arquivo" na janela corrente
-:split arquivo          #-- Divide a janela e abre "arquivo"
-ctrl-w "seta para cima" #-- Coloca o cursor na janela do topo
-ctrl-w ctrl-w           #-- Coloca o cursor na próxima janela
-ctrl-w_                 #-- Maximiza a janela corrente
-ctrl-w=                 #-- Coloca todas as janelas com o mesmo tamanho
-10 ctrl-w+              #-- Adiciona 10 linhas de tamanho na janela corrente
-:vsplit arquivo         #-- Divide a janela verticalmente
-:sview arquivo          #-- O mesmo que split, mas em modo somente-leitura
-:hide                   #-- Fecha a janela corrente
-:only                   #-- Fecha todas as janelas, exceto a janela atual
-:b 2                    #-- Abre #2 na janela corrente
+:tabnew             # - Cria uma nova aba
+gt                  # - Mostra a próxima aba
+:tabfirst           # - Mostra a primeira aba
+:tablast            # - Mostra a última aba
+:tabm n(posicao)    # - Reorganiza as abas
+:tabdo %s/foo/bar/g # - Executa um comando em todas as abas
+:tab ball           # - Coloca todos os arquivos abertos em abas
 
-#--- Auto-completion do texto
+# -- Divisão da janela do Vim
 
-Ctrl+n Ctrl+p         #-- (em modo de inserção): Completa palavra
-Ctrl+x Ctrl+l         #-- Completa linha
-:set dictionary=dict  #-- Define dict como o dicionário atual
-Ctrl+x Ctrl+k         #-- Completa usando o dicionário
+:e arquivo              # - Edita "arquivo" na janela corrente
+:split arquivo          # - Divide a janela e abre "arquivo"
+ctrl-w "seta para cima" # - Coloca o cursor na janela do topo
+ctrl-w ctrl-w           # - Coloca o cursor na próxima janela
+ctrl-w_                 # - Maximiza a janela corrente
+ctrl-w=                 # - Coloca todas as janelas com o mesmo tamanho
+10 ctrl-w+              # - Adiciona 10 linhas de tamanho na janela corrente
+:vsplit arquivo         # - Divide a janela verticalmente
+:sview arquivo          # - O mesmo que split, mas em modo somente-leitura
+:hide                   # - Fecha a janela corrente
+:only                   # - Fecha todas as janelas, exceto a janela atual
+:b 2                    # - Abre #2 na janela corrente
 
-#--- Marcações
+# -- Auto-completion do texto
 
-mk  #-- Marca a posição corrente como k
-`k  #-- Move o cursor para a marca k
-d`k #-- Apaga tudo até a marca k
+Ctrl+n Ctrl+p         # - (em modo de inserção): Completa palavra
+Ctrl+x Ctrl+l         # - Completa linha
+:set dictionary=dict  # - Define dict como o dicionário atual
+Ctrl+x Ctrl+k         # - Completa usando o dicionário
 
-#--- Abreviações
+# -- Marcações
 
-:ab email me@me.com #-- Define email como abreviação de me@me.com
+mk  # - Marca a posição corrente como k
+`k  # - Move o cursor para a marca k
+d`k # - Apaga tudo até a marca k
 
-#--- Identação de Texto
+# -- Abreviações
 
-:set autoindent   #-- Liga a identação automática
-:set smartindent  #-- Liga a identação inteligente
-:set shiftwidth=4 #-- Define o tamanho da identação em 4 espaços
-ctrl-t, ctrl-d    #-- Identa/Deidenta no modo de inserção
->>                #-- Identa
-<<                #-- Deidenta
-==                #-- Auto identa area SELECIONADA, eu uso ggVG antes pra pegar tudo antes
+:ab email me@me.com # - Define email como abreviação de me@me.com
 
-#--- Marcação de sintaxe
+# -- Identação de Texto
+
+:set autoindent   # - Liga a identação automática
+:set smartindent  # - Liga a identação inteligente
+:set shiftwidth=4 # - Define o tamanho da identação em 4 espaços
+ctrl-t, ctrl-d    # - Identa/Deidenta no modo de inserção
+>>                # - Identa
+<<                # - Deidenta
+==                # - Auto identa area SELECIONADA, eu uso ggVG antes pra pegar tudo antes
+
+# -- Marcação de sintaxe
 
 :syntax on: Liga a marcação de sintaxe
 :syntax off: Desliga a marcação de sintaxe
@@ -340,23 +338,29 @@ http://www.uniriotec.br/~morganna/guia/vim.html
 www.gogs.com.br
 -------------------------------------------------------------------------------------
 
-#---- D I C A S   D E   C O N F I G U R A C A O  .vimrc
+# --- D I C A S   D E   C O N F I G U R A C A O  .vimrc
 
 
 " Move entrelinhas visíveis, e não somente físicas, quando em WRAP
 inoremap <expr><UP> pumvisible() ? "<UP>" : "<C-O>gk"
 inoremap <expr><DOWN> pumvisible() ? "<DOWN>" : "<C-O>gj"
 
-#--- Plugins recomendados:
-- molokai :: Colorscheme bem bonito
-- txt.vim :: Sintaxe para arquivos de texto feito pelo aurelio.net
-- html_autoclosetag :: Fecha as tags HTML automaticamente
-- ConqueTerm :: Abre um console bash numa janela
-- taglist :: Mostra árvore de métodos das classes (precisa do ctags)
-- jade e mustache :: Syntax para esses arquivos de template
+# -- Plugins recomendados:
+- molokai # - Colorscheme bem bonito
+- txt.vim # - Sintaxe para arquivos de texto feito pelo aurelio.net
+- html_autoclosetag # - Fecha as tags HTML automaticamente
+- ConqueTerm # - Abre um console bash numa janela
+- taglist # - Mostra árvore de métodos das classes (precisa do ctags)
+- jade e mustache # - Syntax para esses arquivos de template
+vim_multiple_cursores # - Faz o find All do sublime (Ctrl+n)
 
-#--- Corretor ortográfico em português brasileiro:
+# -- Corretor ortográfico em português brasileiro:
 - Download : http://www.broffice.org/verortografico/baixar
 - No vim, digite o comando ':mkspell pt pt_BR'
 - Copie o arquivo pt.utf-8.spl gerado para a pasta ~/.vim/spell/
 - Ative a correção: ':set spell'
+
+# - Usei:
+
+:%s/\.//g    # - Removi pos pontos, subistitui o pontos por nada/vazio, usar o \ para proteger caracteres.
+:%s/\\n/ + /g   # - substitui a quebra de linha, juntando elas e colocando o sinal.   
