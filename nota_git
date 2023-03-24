@@ -34,17 +34,19 @@ git show id_commit          #-- mosta o que foi alterado no commit
 
 #-- Trabalhando com Branch
 
+git branch nome_branch                      #-- cria uma branch LOCAL
+git push -u origin nome_branch              #-- cria uma branch que NÃO EXISTE no repositório
 git branch                                  #-- lista as branchs locais
 git branch -a                               #-- lista as branchs do repositório (github)
-git branch nome1_branch                     #-- cria a branch
 git checkout nome1_branch                   #-- entra na Branch 
 git merge nome2_branch                      #-- unifica a nome2_branch na local (master)
 git rebase nome2_branch                     #-- unifica, mas adiciona os commits da branc no historico da master
-git branch -d nome2_branch                  #-- deleta local, (D) maiusculo é sem dó, minuscolo é se houver um merge já ok.
-git push -d origin nome_branch              #-- deleta a branch do repositório
-git push --set-upstream origin nome_branch  #-- add a branch no repositório github
-git checkout -b nome_banch cod_rach         #-- acessa o backup de uma branch deletada, ai que mora o perigo
+git push -u origin nome_branch              #-- add a branch que NÃO EXISTE no repositório (acho precisssa de um commit antes)
+git push --set-upstream origin nome_branch  #-- add a branch no repositório github (acho precisssa de um commit antes)
 git cherry-pick cod_rach                    #-- puxa o commit dessa rach para sua branch atual
+git checkout -b nome_banch cod_rach         #-- acessa o backup de uma branch deletada, ai que mora o perigo
+git branch -d nome2_branch                  #-- deleta local, (D) maiusculo é sem dó, minuscolo é se houver um merge já ok.
+git push -d origin nome2_branch             #-- deleta a branch do repositório
 
 
 git rm -f nome_arquivo              #-- deleta o arquivo, e deixa de monitorar
