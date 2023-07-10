@@ -59,6 +59,8 @@ $curl -fsSL https://get.docker.com |bach                                      # 
 $pdftk largepdfile.pdf burst                                                  # - Separando pdf pg_0001.pdf, pg_0002.pdf, assim por diante.
 $pdftk 1.pdf 2.pdf 3.pdf cat output 123.pdf                                   # - Unificando pdf 
 $convert blue.jpg img_dir212.gif                                              # - Converte imagem para GIF
+$iconv -f ISO_8859-14 -t UTF8 nome_arquivo -o novo_nome_arquivo               # - Converte de ISO-8859 para UTF8
+$iconv --from-code=ISO-8859-1 --to-code=UTF-8 oldfile > newfile               # - Converte de ISO-8859 para UTF8
 $sudo apt remove nome_app                                                     # - Remove o app mas mantem os arquivos de config
 $sudo apt purg nome_app                                                       # - Remove o app e os arquivos de confg também
 
