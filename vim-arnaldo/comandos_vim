@@ -363,4 +363,5 @@ vim_multiple_cursores # - Faz o find All do sublime (Ctrl+n)
 # - Usei:
 
 :%s/\.//g    # - Removi pos pontos, subistitui o pontos por nada/vazio, usar o \ para proteger caracteres.
+:%s/\r/\r/g  # - Quebras de linha ^M, arquivo formato de quebra de linha do Windows (CRLF - Carriage Return, Line Feed).
 :%s/\\n/ + /g   # - substitui a quebra de linha, juntando elas e colocando o sinal.   
