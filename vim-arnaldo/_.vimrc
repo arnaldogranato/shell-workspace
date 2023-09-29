@@ -11,7 +11,8 @@ set incsearch                 " -realçar correspondências de pesquisa enquanto
 " -BACKUP
 set backup
 set backupdir=/var/tmp/
-set backupext=.%Y%m%d%H%M%S 
+" Adiciona a data e hora ao nome do arquivo de backup
+let &backupext = '.' . strftime('%Y%m%d%H%M%S')
 " set writebackup
 " set backupcopy=yes
 
