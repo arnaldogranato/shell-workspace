@@ -6,7 +6,6 @@ $ sudo dpkg -l                                 # - Para listar todos os programa
 $ tail -f nomearquivo.lot                      # -(mostra o rabo do arquivo em tempo real)
 $ php -f nomedoarquivo                         # -(testa se o arquivo.php está com erro de sintaxe)
 $ ln -s /diretorio/origen /destino/nomedolink  # -(monta um link)
-$ grep dir                                     # -(imprime todas linhas que tem a palavra dir)
 $ skill -KILL -u nome_usuario                  # -(Mata todos usuários meu_usuario)
 $ sudo skill -KILL -u serviço_sistema          # -(Mata todos usuários do sistema_sistema)
 $ sudo chown -R nome_usuario aquinomedoarquivo # -(Como trocar grupo e dono de arquivo ou diretório)
@@ -23,7 +22,9 @@ $ find arquivos/ -xdev -printf '%h\n' | sort | uniq -c | sort -k 1 -n     # - Fa
 $ ConteudoDoComando | mutt -s"TituloDoEmail" -- meuamail@provedor.com.br  # - Enviando conteúdo para o e-amil
 $ cat /var/log/mail.log | mutt -s"Teste" -- arnaldo@provedor.com.br       # - teste email
 $ sudo passwd nomesobrenome         # -(altera senha do usuário)
-$ cat |grep -i TeXtO                # -(puxa tudo maiusculo e minusculo)
+$ grep dir nome_arquivo             # -(imprime todas linhas que tem a palavra dir)
+$ cat |grep -i TeXtO                # -(Lista apenas linhas com texto em no sensitive case, maiusculo ou minusculo)
+$ grep -P 'ERROS.: (?!0)' arq.txt   # - Lista a linas com ERROS.: (Diferente de zero) negando
 $ps -efaa|grep nomeDoUsuario|wc -l  # -(Conta quantos processo estão rodando deste usuários).
 $ps -xa |grep nomeDoServicoOuRobo   # - Informa se está rodando o servico x, este é estartado no rc.local só executar o comando dele lá
 $lsof nomeDoDiretório               # -(Informa quem está usando o diretório, e mostra problema de montagem também).
