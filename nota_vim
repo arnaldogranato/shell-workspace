@@ -135,7 +135,7 @@ vimdiff nome_arq_1 nome_arq_2 # - Aponta as diferenças, no tmux nao há problem
     :%!fmt    # - Escrever este comando alinhará cada linha do seu arquivo atual.
     !}fmt     # - Use-o sempre que precisar alinhar todas as linhas na posição atual do seu cursor.
     :set autoindent # - (TOP) Define o autoindent para sua sessão atual.Pensamentos finais
-
+    :%!column -s ';' -t # - CSV formatar o texto em colunas alinhadas tipo planilha ou tabela 
     :%!XXd       # - Vai para edito binario 
     :%!XXd -r    # - Volta binario
 
