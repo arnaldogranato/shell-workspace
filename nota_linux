@@ -1,77 +1,164 @@
-===Shell, Linux (Ubuntu)===
-$ pwd                                          # - Mostra o caminho do diretório onde está
-$ cp -rp ../nome-pasta .                       # - (copia o (r) diretório/pasta para o (.) local com (p) a mesma permissão)
-$ less                                         # -(é um cat paginado de cima para baixo)
-$ sudo dpkg -l                                 # - Para listar todos os programas instalados em seu Ubuntu
-$ tail -f nomearquivo.lot                      # -(mostra o rabo do arquivo em tempo real)
-$ php -f nomedoarquivo                         # -(testa se o arquivo.php está com erro de sintaxe)
-$ ln -s /diretorio/origen /destino/nomedolink  # -(monta um link)
-$ skill -KILL -u nome_usuario                  # -(Mata todos usuários meu_usuario)
-$ sudo skill -KILL -u serviço_sistema          # -(Mata todos usuários do sistema_sistema)
-$ sudo chown -R nome_usuario aquinomedoarquivo # -(Como trocar grupo e dono de arquivo ou diretório)
-$ ls -la | wc -l                               # - Mostra quantos arquivos tem aqui no diretório.
-$ date -r nomedoarquivo                        # - hora, min e seg da criação
-$ rm -v               # - Remove o link, ATENÇÃO: NÃO colocar "/" no final, pois vai remover o conteudo do dir orig
-$ tile                # - mosta a formatação do arquivo
-$ locate nome_arquivo # - deve estar instalado para localizar
-$ sudo updatedb       # - Atualiza a lista de arquivos
-$ find / -mmin -1     # - listar os arquivos que foram modificados a menos de 1 minuto
-$ find . -iname "meu-arquivo"                                             # - localiza pelo nome com maiuscula ou minúscula -(i)name
-$ find / -type f -name “meu-arquivo”                                      # - localiza arquivos com o nome meu-arquivo, excluindo diretórios  
-$ find arquivos/ -xdev -printf '%h\n' | sort | uniq -c | sort -k 1 -n     # - Faz um rankig de consumo de inodes
-$ ConteudoDoComando | mutt -s"TituloDoEmail" -- meuamail@provedor.com.br  # - Enviando conteúdo para o e-amil
-$ cat /var/log/mail.log | mutt -s"Teste" -- arnaldo@provedor.com.br       # - teste email
-$ sudo passwd nomesobrenome         # -(altera senha do usuário)
-$ grep dir nome_arquivo             # -(imprime todas linhas que tem a palavra dir)
-$ cat |grep -i TeXtO                # -(Lista apenas linhas com texto em no sensitive case, maiusculo ou minusculo)
-$ grep -P 'ERROS.: (?!0)' arq.txt   # - Lista a linas com ERROS.: (Diferente de zero) negando
-$ps -efaa|grep nomeDoUsuario|wc -l  # -(Conta quantos processo estão rodando deste usuários).
-$ps -xa |grep nomeDoServicoOuRobo   # - Informa se está rodando o servico x, este é estartado no rc.local só executar o comando dele lá
-$lsof nomeDoDiretório               # -(Informa quem está usando o diretório, e mostra problema de montagem também).
-$echo Conteudo > NomeDoArquivo      # -(Escreve no arquivo). 
-$pg_dump -s -U UsuarioDoBanco -f NomeDoArquivo NomeDoBanco     # -Gera um dump com a estrutura banco, dai é possivel fazer um < carga_para_sistema.sql
-#smbmount / /192.168.1.102/DIRWINDOWS /mnt/smb/DIRLINUX -o username=nome_usuario,password=minha_senha -o    # - montagem sem cifs
-#mount.cifs / /192.168.1.102/DIRWINDOWS /mnt/smb/DIRLINUX -o username=nome_usuario,password=minha_senha -o  # - montagem com Cifs
-#nmap -v localhost       # - Mostra as portas/protocolo e serviço ssh http... disponíveis de dentro do servidor 
-$ps -efww|grep apache    # - Mostra tudo que o usuário está fazendo mostra o processo pid processamento 
-d$speedtest-cli          # - Teste de Velocidade Upload/Download
-$grep '('INF @1 tail -2 |grep T-K     # - Usei para procurar duas linhas abaixo do infantil que fosse bilhete.
-$df -vh                               # - Mostra o tamanho e espaço livre de um disco -vhi mostra inodes/indices 
-$du                                   # - mostra o tamanho do conteudo
-$ lsb_release -a                      # - Mostra versão do linux ubuntu
-$ route -n                            # - Roteadores do servidor
-# w3m www.meuip.com.br                # - acessa conteudo do site
-$base64 -d < /var/tmp/nomeArquivo     # -Decode base 64, encode deve ser -e
-$tar xzf nomedoarquivo.tar            # - Descomprime $gunzip arquivo.zip ou $unrar x arquivo.rar ou $bunzip arquivo.bz2 ou tar -jxvf arquivo.tar.bz2
-$tar czf nomedoarquivo.tar.gz dirxpt/ # - comprime
-$wall                                 # -Prezados, favor SAIR DO SISTEMA para uma rapida manutencao. Att, Suporte (Ctrl+D)
-# route add -net 192.168.8.0/24 gw 192.168.77.1 eth0                          # - Parte de uma configuração de rota/tunel para facilitar
-$sudo find arquivos/ -xdev -printf '%h\n' | sort | uniq -c | sort -k 1 -n     # - Ranking dos diretórios que mais consomem inodes
-$grep /294 ARQUIVO_NOME.??? |grep -v 2                                        # - Mostra todos os /294 NEGANDO o 2 antes
-$egrep '[0-9][=><]' NOME_ARQUIVO. |grep IF                                    # - peguei tudo que tinha teste com numero colado
-$ps aux | sort -k 4 -r | head -n 2                                            # - Ranking de quem está consumindo mais memória
-$traceroute 192.168.77.215                                                    # - Mostra rota até o servidordestino 
-tkdiff arquivo1 arquivo2                                                      # - só funciona se houver o XQuartz instalado e acessar o terminal do ssh abaixo
-ssh -X -Y usario@maquina                                                      # - para usar o XQuartz no terminal e abrir arquivo ps
-for line in $(cat file.txt); do echo "$line" ; done                           # - for em linhas de um arquivo
-$curl ifconfig.me                                                             # - Mostra consulta o Ip externo
-$sudo ufw app list                                                            # - Lista os apps que usam o firewall do linux ufw
-$curl -fsSL https://get.docker.com |bach                                      # - Exemplo de intalação com curl usando bash se for zsh troca ali no final
-$pdftk largepdfile.pdf burst                                                  # - Separando pdf pg_0001.pdf, pg_0002.pdf, assim por diante.
-$pdftk 1.pdf 2.pdf 3.pdf cat output 123.pdf                                   # - Unificando pdf 
-$convert blue.jpg img_dir212.gif                                              # - Converte imagem para GIF
-$iconv -f ISO_8859-14 -t UTF8 nome_arquivo -o novo_nome_arquivo               # - Converte de ISO-8859 para UTF8
-$iconv --from-code=ISO-8859-1 --to-code=UTF-8 oldfile > newfile               # - Converte de ISO-8859 para UTF8
-$sudo apt remove nome_app                                                     # - Remove o app mas mantem os arquivos de config
-$sudo apt purg nome_app                                                       # - Remove o app e os arquivos de confg também
+===Gua rápido Shell Linux (Ubuntu)===
 
-$for i in "comando_lista_arquivos .referencia "; do vim -c "%s/\.referencia@/@/g|wq" $i; done
-=======
-$htop                                                                          # - Um top mais apresentável e funcional
-$sudo iptables -L -n                                                          # - Lista IPs banidos no Linux
-$sudo fail2ban-client -i                                                      # - Acesso ao cliente o Fail2ban
-    > status ssh                                                              # - Infica o arquivo de log do Fail2ban e lista IPs Banidos
-    > set ssh unbanip 200.222.222.222                                         # - Libera o IP que estava banido no Fail2ban
-    
-$for i in "comando_lista_arquivos .referencia "; do vim -c "%s/\.referencia@/@/g|wq" $i; done  # - Exemplo de gabiarra que poderia ser feita apenas no vim, mas gostei.
->>>>>>> 76d27f6b86da7fa7e78f47b72ae9d39a0fbd71a6
+    REDE
+
+ifconfig # - Embora desatualizado em sistemas mais recentes, o ifconfig ainda é amplamente utilizado para exibir e configurar interfaces de rede.
+netcat (nc) # - Uma ferramenta de rede versátil para leitura/gravação de dados em conexões de rede, varredura de portas, entre outros.
+tcpdump # - Uma ferramenta poderosa para capturar e analisar pacotes de rede em tempo real.
+wireshark # - Uma ferramenta gráfica popular para análise de tráfego de rede.
+dig # - Uma ferramenta de linha de comando para fazer consultas DNS detalhadas.
+pwd  # - Mostra o caminho do diretório atual.
+ssh -X -Y usuário@máquina  # - Acessa um servidor remoto com XQuartz para visualização gráfica.
+# - route add -net 192.168.8.0/24 gw 192.168.77.1 eth0  # - Adiciona uma rota de rede.
+# - nmap -v localhost  # - Mostra as portas abertas no servidor local.
+curl ifconfig.me  # - Obtem o IP externo.
+sudo ufw app list  # - Lista aplicativos que usam o firewall UFW.
+
+    PROCESSOS RELACIONADOS
+
+kill # - Interrompe processos com base no ID do processo (PID) ou no nome do processo.
+top # - Mostra os processos em execução e suas estatísticas de uso de recursos em tempo real.
+pgrep # - Localiza processos com base em padrões de nome.
+killall # - Interrompe processos com base no nome do processo.
+ps -efaa|grep nomeDoUsuario|wc -l  # - Conta quantos processos um usuário está executando.
+ps -xa |grep nomeDoServicoOuRobo  # - Verifica se um serviço está em execução.
+ps -aux | sort -k 4 -r | head -n 2  # - Mostra os processos que mais consomem memória.
+htop  # - Monitora processos de forma mais amigável.
+
+    COMANDOS DE ARQUIVO
+
+mv # - Move ou renomeia arquivos e diretórios.
+mkdir # - Cria diretórios.
+touch # - Atualiza o carimbo de data/hora de um arquivo ou cria um novo arquivo vazio.
+chmod # - Altera as permissões de acesso a arquivos e diretórios.
+chown # - Altera o proprietário e/ou grupo de arquivos e diretórios.
+cp -rp ../nome-pasta .  # - Copia um diretório com suas permissões.
+less  # - Visualiza um arquivo paginação por paginação.
+rm -v  # - Remove um link (cuidado para não usar com "/").
+tile  # - Mostra a formatação de um arquivo.
+find / -mmin -1  # - Lista arquivos modificados no último minuto.
+find . -iname "meu-arquivo"  # - Localiza um arquivo por nome, ignorando maiúsculas e minúsculas.
+find / -type f -name “meu-arquivo”  # - Localiza arquivos com um nome específico, excluindo diretórios.
+find arquivos/ -xdev -printf '%h\n' | sort | uniq -c | sort -k 1 -n  # - Mostra um ranking de consumo de inodes.
+echo Conteudo > NomeDoArquivo  # - Escreve conteúdo em um arquivo.
+cat |grep -i TeXtO  # - Lista linhas de um arquivo que contêm um texto específico, ignorando maiúsculas e minúsculas.
+grep -P 'ERROS.  # - (?!0)' arq.txt  # - Mostra linhas que contêm "ERROS.:" sem o número "0".
+lsof nomeDoDiretório  # - Mostra quem está usando um diretório.
+base64 -d < /var/tmp/nomeArquivo  # - Decodifica base64.
+tar xzf nomedoarquivo.tar  # - Descomprime um arquivo compactado.
+tar czf nomedoarquivo.tar.gz dirxpt/  # - Compacta um diretório.
+gzip/gunzip # - Ferramentas para compactar e descompactar arquivos no formato gzip./
+pdftk largepdfile.pdf burst  # - Separa um PDF em páginas individuais.
+pdftk 1.pdf 2.pdf 3.pdf cat output 123.pdf  # - Une PDFs.
+convert blue.jpg img_dir212.gif  # - Converte uma imagem para GIF.
+iconv -f ISO_8859-14 -t UTF8 nome_arquivo -o novo_nome_arquivo  # - Converte de ISO-8859 para UTF8.
+iconv --from-code=ISO-8859-1 --to-code=UTF-8 oldfile > newfile  # - Converte de ISO-8859 para UTF8.
+grep # - Uma ferramenta versátil para pesquisar padrões em arquivos de texto ou saída de comandos.
+sed # - Um editor de fluxo de texto que pode ser usado para transformar texto.
+awk # - Uma linguagem de programação de manipulação de texto para processamento de dados baseado em padrões.
+tar # - Uma ferramenta para manipular arquivos de arquivo, geralmente usada para criar, visualizar e extrair arquivos tar.
+
+    INSTALAÇÃO DE PACOTES
+
+apt-get ou apt # - Gerenciadores de pacotes para instalação e remoção de software em sistemas baseados em Debian, como Ubuntu.
+sudo apt install nome_pacote  # - Instala um pacote.
+sudo apt remove nome_pacote  # - Remove um pacote (mantém arquivos de configuração).
+sudo apt purge nome_pacote  # - Remove um pacote e seus arquivos de configuração.
+curl -fsSL https://get.docker.com |bash  # - Instala o Docker usando curl e bash.
+
+    INFORMAÇÕES DE HARDWARE
+
+df -vh  # - Mostra o uso de disco.
+du  # - Mostra o tamanho do conteúdo de um diretório.
+lsb_release -a  # - Mostra a versão do Linux/Ubuntu.
+route -n  # - Mostra os roteadores do servidor.
+
+    COMPRESSÃO DE ARQUIVOS
+
+mount # - Monta sistemas de arquivos.
+umount # - Desmonta sistemas de arquivos montados.
+tar xzf nomedoarquivo.tar  # - Descomprime um arquivo compactado.
+tar czf nomedoarquivo.tar.gz dirxpt/  # - Compacta um diretório.
+gunzip arquivo.zip  # - Descomprime um arquivo ZIP.
+
+    GERENCIAMENTO DO SISTEMA
+
+sudo fail2ban-client -i  # - Acessa o cliente do Fail2ban para gerenciar o sistema de proteção contra ataques.
+    > status ssh  # - Mostra o status do log do Fail2ban para SSH e IPs banidos.
+    > set ssh unbanip 200.222.222.222  # - Desban um IP específico do Fail2ban.
+
+    AUTOMAÇÃO DE TAREFAS
+
+for i in "comando_lista_arquivos .referencia "; do vim -c "%s/\.referencia@/@/g|wq" $i; done  # - Substitui todas as ocorrências de ".referencia@" por "/" em cada arquivo da lista "comando_lista_arquivos .referencia".
+
+    PROCESSAMENTO DE TEXTO
+
+Processamento de arquivos:
+    for line in $(cat file.txt); do echo "$line" ; done  # - Lê cada linha do arquivo "file.txt" e imprime na tela.
+        $(cat file.txt)  # - Substitui o comando por seu conteúdo, permitindo a iteração linha por linha.
+        echo "$line"  # - Exibe cada linha do arquivo na tela.
+
+==============================================================================
+    MONTAGEM DE PARTIÇÕES E DISPOSITIVOS
+
+mount.cifs //192.168.1.102/DIRWINDOWS /mnt/smb/DIRLINUX -o username=nome_usuario,password=minha_senha -o  # - permite montar um compartilhamento SMB (Server Message Block) remoto em um diretório local, dando acesso aos arquivos e pastas do compartilhamento como se estivessem no seu computador.
+
+    DETALHES:
+"
+    mount.cifs  # - Este é o comando principal que realiza a montagem do compartilhamento SMB.
+    //192.168.1.102/DIRWINDOWS  # - Esta parte especifica o caminho do compartilhamento SMB remoto.
+        //  # - Indica que o compartilhamento está em um servidor remoto.
+        192.168.1.102  # - Substitua por endereço IP do servidor SMB.
+        /DIRWINDOWS  # - Substitua por nome do diretório compartilhado no servidor.
+    /mnt/smb/DIRLINUX  # - Esta parte define o diretório local onde o compartilhamento será montado.
+        /mnt/smb  # - Crie este diretório se ainda não existir.
+        /DIRLINUX  # - Substitua por nome do diretório que você deseja criar no sistema local.
+    -o username=nome_usuario  # - Esta opção especifica o nome de usuário para autenticação no compartilhamento.
+        Substitua nome_usuario pelo nome de usuário real da sua conta no servidor SMB.
+    password=minha_senha  # - Esta opção define a senha para autenticação no compartilhamento.
+        Substitua minha_senha pela senha real da sua conta no servidor SMB.
+    -o  # - Esta opção permite especificar opções adicionais de montagem.
+        Você pode adicionar mais opções após -o, como mode=0777 para definir permissões de leitura, escrita e execução para todos os usuários.
+"
+Observações:
+
+    Certifique-se de que o servidor SMB esteja configurado corretamente e que você tenha permissão para acessar o compartilhamento.
+    O comando mount.cifs requer o pacote cifs-utils instalado.
+    Para desmontar o compartilhamento, utilize o comando umount /mnt/smb/DIRLINUX.
+
+Exemplos de opções adicionais:
+
+    -o ro  # - Monta o compartilhamento somente para leitura.
+    -o rw  # - Monta o compartilhamento para leitura e escrita.
+    -o file_mode=0644  # - Define a permissão de arquivo padrão para 644 (leitura e gravação para o proprietário, leitura para o grupo e outros).
+    -o dir_mode=0755  # - Define a permissão de diretório padrão para 755 (leitura, gravação e execução para o proprietário, leitura e execução para o grupo e outros).
+    -o cache=strict  # - Define o modo de cache para estrito, o que significa que as modificações feitas no compartilhamento serão gravadas imediatamente no servidor.
+
+Lembre-se:
+
+    A montagem de partições e dispositivos permite que você acesse e utilize diferentes unidades de armazenamento em seu computador.
+    Utilize os comandos de montagem com cuidado, pois erros podem corromper dados ou causar problemas no sistema.
+    Consulte a documentação do comando mount.cifs para obter mais informações sobre as opções disponíveis.
+
+Dicas adicionais:
+
+    Se você não se lembra da senha do compartilhamento, tente usar a ferramenta smbclient para se conectar ao servidor e listar os compartilhamento disponíveis.
+    Você também pode usar ferramentas gráficas como o Gnome Files ou o Konqueror para montar compartilhamentos SMB de forma mais intuitiva.
+
+
+smbmount / /192.168.1.102/DIRWINDOWS /mnt/smb/DIRLINUX -o username=nome_usuario,password=minha_senha -o  # - Monta um compartilhamento SMB remoto em um diretório local.
+
+    DETALHES:
+"
+    /  # - Ponto de montagem local no sistema.
+    /192.168.1.102/DIRWINDOWS  # - Caminho do compartilhamento SMB remoto.
+    /mnt/smb/DIRLINUX  # - Diretório local onde o compartilhamento será montado.
+    -o username=nome_usuario  # - Define o nome de usuário para autenticação no compartilhamento.
+    -o password=minha_senha  # - Define a senha para autenticação no compartilhamento.
+    -o  # - Especifica opções adicionais de montagem.
+"
+==============================================================================
+
+    OUTROS
+
+
