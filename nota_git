@@ -30,6 +30,8 @@ git log --stat              # - historico do projeto
 git log --oneline           # - mosta só a rach de cada commit
 git log -3                  # - mostra os 3 ultimos commits
 git show id_commit          # - mosta o que foi alterado no commit
+git checkout -- dir/arq.txt dir/arq.txt # Desfaz as alterações nos arquivos arq.txt.
+git clean -df                           # Remove os arquivos de migração não rastreados
 
 
 # - Trabalhando com Branch
