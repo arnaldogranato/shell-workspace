@@ -34,6 +34,7 @@ chmod # - Altera as permissões de acesso a arquivos e diretórios.
 chown # - Altera o proprietário e/ou grupo de arquivos e diretórios.
 cp -rp ../nome-pasta .  # - Copia um diretório com suas permissões.
 less  # - Visualiza um arquivo paginação por paginação.
+du -sh * | sort -hr # - Listar o tamanho das pastas e arquivos por ordem de tamanho.
 rm -v  # - Remove um link (cuidado para não usar com "/").
 tile  # - Mostra a formatação de um arquivo.
 find / -mmin -1  # - Lista arquivos modificados no último minuto.
