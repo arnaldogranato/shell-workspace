@@ -13,6 +13,8 @@ ssh -X -Y usuário@máquina  # - Acessa um servidor remoto com XQuartz para visu
 # - nmap -v localhost  # - Mostra as portas abertas no servidor local.
 curl ifconfig.me  # - Obtem o IP externo.
 sudo ufw app list  # - Lista aplicativos que usam o firewall UFW.
+iptables -D INPUT -s 999.999.999.999 -j DROP  # - desbloqueia o IP entrada no sistema.
+
 
     PROCESSOS RELACIONADOS
 
