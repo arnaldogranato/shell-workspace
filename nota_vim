@@ -334,6 +334,7 @@ ctrl-t, ctrl-d    # - Identa/Deidenta no modo de inserção
 >>                # - Identa
 <<                # - Deidenta
 ==                # - Auto identa area SELECIONADA, eu uso ggVG antes pra pegar tudo antes
+:%!python -m json.tool # - Identa um json que está em linha contínua, para faciliar a leitura com as quebras de linha
 
 # -- Marcação de sintaxe
 
