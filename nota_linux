@@ -164,4 +164,7 @@ smbmount / /192.168.1.102/DIRWINDOWS /mnt/smb/DIRLINUX -o username=nome_usuario,
 
     OUTROS
 
+locate = localiza arquivos
+updatedb = atualiza arquivos na base do locate.
+
 
