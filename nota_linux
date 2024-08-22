@@ -82,7 +82,8 @@ mount # - Monta sistemas de arquivos.
 umount # - Desmonta sistemas de arquivos montados.
 tar xzf nomedoarquivo.tar  # - Descomprime um arquivo compactado.
 tar czf nomedoarquivo.tar.gz dirxpt/  # - Compacta um diretório.
-gunzip arquivo.zip  # - Descomprime um arquivo ZIP.
+gunzip arquivo.gz  # - Descomprime um arquivo GZ.
+unzip arquivo.zip  # - Descomprime um arquivo ZIP.
 
     GERENCIAMENTO DO SISTEMA
 
