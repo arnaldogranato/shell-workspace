@@ -18,7 +18,9 @@ tmux attach -t 1 #-- volta a sessao
     ctrl+<-  #-- ajusta o tamanho das janelas
 
     x        #-- fecha ou exit
-
+    PGUP     #-- Rolagem
+    Ctrl+Space #-- Seleciona texto (usei dentro da Rolagem)
+        w #-- Copia texto selecionado no Ctrl+Space         
 #--- C O N F I G U R A Ç Õ E S
 set -g prefix C-Space
 
