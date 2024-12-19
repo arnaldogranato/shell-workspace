@@ -11,3 +11,10 @@
 # - REMOVENDO PISCADA DE TERMINAL
 - Caminho: pesquisei config, alertas visuais para notificações de audio.
  
+# - NAVEGANDO NO WSL VIA EXPLORER DO WINDOWS
+
+\\wsl$\Ubuntu-20.04\home\arnaldo\arnaldo-workspace
+
+# - VERIFICANDO VERSÃO DO WSL VIA POWERSHELL
+
+wsl -l -v

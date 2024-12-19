@@ -1,30 +1,48 @@
 #---- P L U G I N S   D O   G I T H U B - Vim-plug. 
 
-
-
 https://github.com/junegunn/vim-plug #-- Link para instalaçao do plugin
 
-:PlugInstall #-- DEPOIS DE INTALADO E DENTRO DO VIM, Comando para carregar o plugim já instalado. Ao executar, uma janela abrirá com o status de instalação dos plugins. UmBasta fechar a janela de instalação e.
+Você está usando o gerenciador de plugins vim-plug. Vamos analisar o que cada plugin listado no seu vimrc faz:
 
-#-- Para automatizar o PlugInstall e startar os plugin automaticamente coloque este no seu .vimrc
-#-- https://github.com/junegunn/vim-plug/wiki/extra
+    Plug 'terryma/vim-multiple-cursors': Este plugin adiciona a funcionalidade de múltiplos cursores ao Vim. Isso permite selecionar várias ocorrências de uma palavra ou padrão e editá-las simultaneamente. É extremamente útil para renomear variáveis, editar blocos de código repetitivos e realizar outras edições em massa de forma eficiente.
+
+    Plug 'jiangmiao/auto-pairs': Este plugin insere automaticamente pares de caracteres como parênteses (), colchetes [], chaves {}, aspas simples '' e aspas duplas "". Ele também lida com o fechamento automático desses pares e oferece recursos para pular entre eles, tornando a digitação de código muito mais rápida e reduzindo erros de sintaxe.
+
+    Plug 'vim-airline/vim-airline': Este plugin melhora drasticamente a aparência e a funcionalidade da barra de status do Vim (a linha na parte inferior da janela). Ele exibe informações úteis como o modo atual do Vim (Normal, Inserção, Visual, etc.), o nome do arquivo, a codificação, o tipo de arquivo, a posição do cursor, informações do Git (se aplicável) e muito mais. É altamente configurável e oferece temas para personalizar sua aparência.
+
+    Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }: Este plugin fornece um ambiente de desenvolvimento integrado (IDE) básico para Python dentro do Vim. Ele oferece recursos como:
+        Destaque de sintaxe aprimorado para Python.
+        Indentação automática.
+        Verificação de sintaxe em tempo real (com Pyflakes ou outros linters).
+        Execução de código Python dentro do Vim.
+        Integração com depuradores (como pdb).
+        Preenchimento automático de código.
+        Documentação rápida (com K).
+
+    A opção { 'for': 'python', 'branch': 'develop' } especifica que este plugin deve ser carregado apenas para arquivos Python e usa o branch develop do repositório, o que pode incluir recursos mais recentes, mas também pode ser menos estável.
+
+# - R E Q U I S I T O S
+
+1. Criar o diretório para o vim-plug (se necessário):
+
+mkdir -p ~/.vim/autoload
+
+2. Baixar o plug.vim:
+
+-Usando curl:
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+-Usando wget:
+wget -qO ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+# - A U T O  I N S T A L L - autocmd VimEnter * ...: Este bloco de código é um autocomando que é executado quando o Vim é iniciado (VimEnter). Ele verifica se algum dos plugins listados no seu vimrc não foi instalado (ou seja, se o diretório do plugin não existe). Se algum plugin estiver faltando, ele executa PlugInstall --sync, que instala os plugins ausentes de forma síncrona (aguardando a conclusão da instalação).
+# -OBS:Para observar o processo de instalação e verificar o status diretamente no Vim, você pode remover temporariamente o | q do seu autocomando abaixo.
+
+
 autocmd VimEnter *
   \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
   \|   PlugInstall --sync | q
   \| endif
-
-
-
-#---- M E U S   P L U G I N S
-
-
-plug 'terryma/asdfasdfasdf-multiple-cursors' #-- Faz o find All do sublime (Ctrl+n)
-    #-- https://github.com/terryma/vim-multiple-cursors
-       #-- https://github.com/VundleVim/Vundle.vim
-	#-- https://github.com/tpope/vim-pathogen
-	#-- https://github.com/Shougo/neobundle.vim
-
-plug 'jiangmiao/auto-pairs' #-- Completa o fechamento de {(
-    #-- https://github.com/jiangmiao/auto-pairs
-
 

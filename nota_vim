@@ -94,7 +94,7 @@ vimdiff nome_arq_1 nome_arq_2  #- Aponta as diferenças, no tmux nao há problem
     :g/string/d    #- (TOP) Deleta todas as linhas que contenham string do seu documento.
     :g/^.\{,7}$/d  #- (TOP) Deleta linhas com menos de... menores que de 7 caracteres.
 
-# - Copia e Cola, usando áre de tranferencia +clipboard
+# - Copiar e Cola, usando áre de tranferencia +clipboard
 
     v, ", +, y  #- Pressione essa 4 comandos separadamente um seguida do outro sendo o v para selecionar o texto desejado.
     vim --version | grep clipboard  #- Verifica Se você vir algo como +clipboard na saída, significa que o suporte à Área de Transferência está habilitado.
