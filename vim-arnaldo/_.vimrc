@@ -28,14 +28,17 @@ highlight DiffText     ctermfg=NONE ctermbg=Yellow  guifg=NONE guibg=#FFFF00
 
 
 " -https://github.com/junegunn/vim-plug
- 
 call plug#begin()
 Plug 'terryma/vim-multiple-cursors'
 Plug 'jiangmiao/auto-pairs'
+" - Este plugin melhora drasticamente a aparência e a funcionalidade da barra de status do Vim 
 Plug 'vim-airline/vim-airline'
 Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop'  }
 call plug#end()
 
+" - Este bloco de código é um autocomando que é executado quando o Vim é iniciado (VimEnter). 
+" - Ele verifica se algum dos plugins listados no seu vimrc não foi instalado (ou seja, se o diretório do plugin não existe). 
+" - Se algum plugin estiver faltando, ele executa PlugInstall --sync, que instala os plugins ausentes de forma síncrona (aguardando a conclusão da instalação).
 autocmd VimEnter *
 			\  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 			\|   PlugInstall --sync | q

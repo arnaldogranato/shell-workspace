@@ -1,19 +1,21 @@
+#- L I N K  O F I C I A L:
+
+Oh-my-bash site: https://ohmybash.github.io/
+Repositorio oficial: https://github.com/ohmybash/oh-my-bash
+Fonts repo: https://github.com/powerline/fonts
+Agnoster bash: https://github.com/speedenator/agnost-bash 
+
+OSH_THEME="agnoster"
+
+===========================================================================
+
+#-- C O M A N D O
+
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
+
+
 ADVERTENCIA: 
 Si eres usuario de Windows, te sugiero usar emuladores como:
 Babun:  https://babun.github.io/
 Cmder: https://cmder.net/
 Git Bash: https://git-scm.com/downloads
-
-Recursos:
-Oh-my-bash site: https://ohmybash.github.io/
-Repositorio oficial: https://github.com/ohmybash/oh-my-bash
-Fonts repo: https://github.com/powerline/fonts
-Agnoster bash: https://github.com/speedenator/agnost... 
-===========================================================================
-
-
-#-- Gostei da configuração https://ohmybash.github.io/ ou https://github.com/ohmybash/oh-my-bash
-sh -c "$(curl -fsSL https://raw.github.com/ohmybash/oh-my-bash/master/tools/install.sh)"
-
-
-OSH_THEME="agnoster"
