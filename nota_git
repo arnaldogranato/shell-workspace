@@ -1,11 +1,12 @@
-# - Configs
+# - Configs GLOBAL
 
 git config --global user.name nome_usuario
 git config --global user.email nome_usuario@gmail.com
+# - ESSENCIAL ^^^
 git config --global core.editor vim
 git config --list                                      # - lista o arquivo de configs
 git config --global credential.helper 'cache --timeout=3600' # - Guarda o login e senha/token em memória por 1 hora = 3600min 
-#-CUIDADO git config --global credential.helper store        # - Guarda o login (usr/senha) em um arquivo 
+# - CUIDADO git config --global credential.helper store        # - Guarda o login (usr/senha) em um arquivo 
 
 # - Comandos Básicos 
 
