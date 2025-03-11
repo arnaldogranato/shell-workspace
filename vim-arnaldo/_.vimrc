@@ -35,7 +35,9 @@ highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Re
 " -guifg: Cor do texto no GUI (ambiente gráfico).
 " -guibg: Cor do fundo no GUI.
 
-vnoremap <C-c> :'<,'>w !clip.exe<CR>
+" quando estiver no modo cisual (vnoremap) o Ctrl+c (<C-c>) copia a área
+" selecionada ('<,'>)
+vnoremap <C-c> :w !clip.exe<CR>
 
 " -https://github.com/junegunn/vim-plug
 call plug#begin()
