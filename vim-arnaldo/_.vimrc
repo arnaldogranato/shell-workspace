@@ -45,7 +45,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'jiangmiao/auto-pairs'
 " - Este plugin melhora drasticamente a aparência e a funcionalidade da barra de status do Vim 
 Plug 'vim-airline/vim-airline'
-Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop'  }
+Plug 'dense-analysis/ale'  " PYTHON, https://github.com/dense-analysis/ale
 call plug#end()
 
 " - Este bloco de código é um autocomando que é executado quando o Vim é iniciado (VimEnter). 
