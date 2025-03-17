@@ -24,8 +24,10 @@ Você está usando o gerenciador de plugins vim-plug. Vamos analisar o que cada 
 # - R E Q U I S I T O S
 
 1. Criar o diretório para o vim-plug (se necessário):
+    Obs. Ao intalar o vim atualmente ele já cria esse diretório.
 
 mkdir -p ~/.vim/autoload
+
 
 2. Baixar o plug.vim:
 
@@ -36,6 +38,7 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 -Usando wget:
 wget -qO ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 
 # - A U T O  I N S T A L L - autocmd VimEnter * ...: Este bloco de código é um autocomando que é executado quando o Vim é iniciado (VimEnter). Ele verifica se algum dos plugins listados no seu vimrc não foi instalado (ou seja, se o diretório do plugin não existe). Se algum plugin estiver faltando, ele executa PlugInstall --sync, que instala os plugins ausentes de forma síncrona (aguardando a conclusão da instalação).
 # -OBS:Para observar o processo de instalação e verificar o status diretamente no Vim, você pode remover temporariamente o | q do seu autocomando abaixo.

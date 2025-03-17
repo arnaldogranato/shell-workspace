@@ -111,3 +111,4 @@ source $OSH/oh-my-bash.sh
 # alias bashconfig="mate ~/.bashrc"
 # alias ohmybash="mate ~/.oh-my-bash"
 alias c9="ssh 192.168.8.209"
+alias pip="pipx"

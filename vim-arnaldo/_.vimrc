@@ -16,16 +16,28 @@ let &backupext = '.' . strftime('%Y%m%d%H%M%S')
 " set writebackup
 " set backupcopy=yes
 
+" Ativar sintaxe e tema de cores
+colorscheme desert " ou outro tema de sua preferência
+
 " -Para configurar as cores no VimDiff
-highlight DiffAdd      ctermfg=NONE ctermbg=Green   guifg=NONE guibg=#00FF00
-highlight DiffChange   ctermfg=NONE ctermbg=Cyan    guifg=NONE guibg=#00FFFF
-highlight DiffDelete   ctermfg=NONE ctermbg=Red     guifg=NONE guibg=#FF0000
-highlight DiffText     ctermfg=NONE ctermbg=Yellow  guifg=NONE guibg=#FFFF00
+"highlight DiffAdd      ctermfg=NONE ctermbg=Green   guifg=NONE guibg=#00FF00
+"highlight DiffChange   ctermfg=NONE ctermbg=Cyan    guifg=NONE guibg=#00FFFF
+"highlight DiffDelete   ctermfg=NONE ctermbg=Red     guifg=NONE guibg=#FF0000
+"highlight DiffText     ctermfg=NONE ctermbg=Yellow  guifg=NONE guibg=#FFFF00
+
+" Melhorar o contraste no vimdiff
+highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+highlight DiffDelete cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+highlight DiffChange cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Red
 " -ctermfg: Cor do texto no terminal (usada quando a cor não é suportada no GUI).
 " -ctermbg: Cor do fundo no terminal (usada quando a cor não é suportada no GUI).
 " -guifg: Cor do texto no GUI (ambiente gráfico).
 " -guibg: Cor do fundo no GUI.
 
+" quando estiver no modo cisual (vnoremap) o Ctrl+c (<C-c>) copia a área
+" selecionada ('<,'>)
+vnoremap <C-c> :w !clip.exe<CR>
 
 " -https://github.com/junegunn/vim-plug
 call plug#begin()
