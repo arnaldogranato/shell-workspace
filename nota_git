@@ -10,6 +10,8 @@ git config --global credential.helper 'cache --timeout=3600' # - Guarda o login 
 
 # - Comandos Básicos 
 
+git pull                    # - atualiza o repositório
+git pull --no-rebase        # - atualiza e reaplica seus commits locais em cima dos commits remotos mais recentes.
 git clone https://githut... # - clona, copia, puxa o repositorio
 git init                    # - para iniciar o monitoramento de uma pasta
 git status                  # - uso para ver o que tem alterado
@@ -70,3 +72,36 @@ Fabio Ruich: https://www.youtube.com/watch?v=i9UqgsXpqT4
 Dica: Extensão para o Visual Studio Code legal é o Gitignore Tamplates, pra facilitar o .gitignore
 Dica: Eu posso colocar uma exceção no .gitignore com (!) no início da linha, caso eu use um coringa (*) para varios arquivos.
 
+# - PROBLEMAS COM MERGE:
+Quando seu repositório local e o repositório remoto (no GitHub) têm histórias diferentes, ou seja, divergiram.
+
+Entendendo os Problemas
+
+    "divergent branches and need to specify how to reconcile them" (git pull):
+        Isso significa que o Git não sabe como juntar as alterações do repositório remoto com as suas alterações locais.
+        Ele oferece três opções: merge, rebase e fast-forward only.
+
+    "rejected master -> master (non-fast-forward)" (git push):
+        Isso significa que você está tentando enviar suas alterações para o repositório remoto, mas o histórico local está "atrasado" em relação ao remoto.
+        O Git não permite sobrescrever o histórico remoto sem uma maneira de juntar as alterações.
+
+Passos para Resolver
+
+    Decida como você quer reconciliar as alterações:
+        Merge (git config pull.rebase false ou git pull --no-rebase):
+            Cria um novo commit que junta as alterações locais e remotas.
+            Mantém o histórico de commits mais explícito.
+            Pode resultar em um histórico mais "bagunçado" se houver muitos merges.
+        Rebase (git config pull.rebase true ou git pull --rebase):
+            Reaplica seus commits locais em cima dos commits remotos mais recentes.
+            Mantém o histórico de commits mais linear e limpo.
+            Pode ser mais complicado se você já compartilhou seus commits locais com outros.
+        Fast-forward only (git config pull.ff only):
+            Git só fará pull se o repositório remoto estiver a frente do local. Se o local tiver commits que o remoto não tem, o pull falhará.
+            Utilizado para garantir que o histórico local, só seja atualizado caso o remoto não tenha commits divergentes.
+
+    Para iniciantes, o merge é geralmente mais simples e seguro.
+
+git pull --no-rebase
+
+    Isso irá baixar as alterações do repositório remoto e criar um commit de merge.
