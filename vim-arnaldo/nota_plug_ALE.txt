@@ -1,0 +1,84 @@
+1. Instalação do vim-plug:
+
+    Se você ainda não tem o vim-plug, instale-o. As instruções variam dependendo do seu sistema operacional.
+
+    Para Linux/macOS, você pode usar:
+    Bash
+
+    curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+    Para Windows, as instruções estão na página do vim-plug no GitHub.
+
+2. Instalação do ALE com vim-plug:
+
+    Abra seu arquivo ~/.vimrc (ou ~/.config/nvim/init.vim para Neovim).
+
+    Adicione o seguinte bloco de configuração do vim-plug:
+    Vim Script
+
+    call plug#begin('~/.vim/plugged') " ou o caminho onde os plugins serão instalados
+
+    Plug 'dense-analysis/ale'
+
+    call plug#end()
+
+    Salve o arquivo e abra o Vim.
+
+    Execute o comando :PlugInstall. Isso irá baixar e instalar o plugin ALE.
+
+3. Configuração do ALE para Python:
+
+    Ainda no seu ~/.vimrc, adicione as configurações específicas para Python:
+    Vim Script
+
+" Configuração do ALE para Python
+let g:ale_linters = {'python': ['flake8']} " ou 'pylint'
+let g:ale_fixers = {'python': ['autopep8']} " Opcional: para correções automáticas
+let g:ale_fix_on_save = 1 " Opcional: corrige ao salvar
+
+" Configurações opcionais adicionais
+let g:ale_sign_error = '>>'
+let g:ale_sign_warning = '--'
+let g:ale_virtualtext_cursor = 'disabled'
+
+Certifique-se de que flake8, pylint e autopep8 estão instalados no seu sistema (ou no ambiente virtual que você está usando):
+Bash
+
+pip install flake8 autopep8
+
+ou
+Bash
+
+    pip install pylint
+
+    Salve o ~/.vimrc e reinicie o Vim.
+
+4. Principais Funções para Codificar Python:
+
+    Linting em Tempo Real:
+        O ALE irá verificar seu código Python enquanto você digita, exibindo erros e avisos em tempo real.
+        Os erros e avisos são mostrados com sinais na barra lateral e/ou texto virtual na linha do erro.
+    Correção Automática (:ALEFix):
+        Se você instalou e configurou o autopep8, pode usar o comando :ALEFix para corrigir automaticamente erros de formatação.
+        Se a opção g:ale_fix_on_save estiver ativada, o ALE irá corrigir automaticamente os erros ao salvar o arquivo.
+    Navegação entre Erros:
+        <C-k>: Navega para o erro anterior.
+        <C-j>: Navega para o próximo erro.
+    Informações de Configuração (:ALEInfo):
+        Use o comando :ALEInfo para ver quais linters e fixers o ALE está usando para o arquivo atual.
+    Desativar Linters e Avisos:
+        Você pode desativar linters específicos ou avisos configurando as opções g:ale_linters, g:ale_linters_explicit e outras.
+    Personalização da Exibição:
+        Você pode personalizar a aparência dos erros e avisos usando as opções g:ale_sign_error, g:ale_sign_warning, g:ale_virtualtext_cursor e outras.
+
+Fluxo de Trabalho Básico:
+
+    Abra um arquivo .py no Vim.
+    Codifique normalmente.
+    O ALE irá exibir erros e avisos em tempo real.
+    Use <C-k> e <C-j> para navegar entre os erros.
+    Use :ALEFix para corrigir erros de formatação (se configurado).
+    Use :ALEInfo para verificar a configuração do ALE.
+
+Com essa configuração, você terá um ambiente de desenvolvimento Python eficiente e produtivo no Vim.
