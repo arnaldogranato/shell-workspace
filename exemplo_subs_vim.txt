@@ -1,0 +1,19 @@
+No exmeplo abaixo estou adicionando o 0 para quando há apenas um caractere emtre ; e $
+noque que para usar o mesmo caratere encontrado na pesquisa eu guardo ele em meroria 1
+
+Exemplo:
+
+...;a
+...;bc
+...;d
+
+Depois de executar :%s/;\(.\)$/;0\1/g:
+
+...;0a
+...;bc
+...;0d
+
+Note que peguei o final da linha com $
+
+\(.\) Captura exatamente um caractere e o coloca em um grupo de captura numerado.
+\1 Insere o conteúdo do primeiro grupo de captura (o caractere capturado
