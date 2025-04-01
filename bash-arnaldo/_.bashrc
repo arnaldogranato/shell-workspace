@@ -11,7 +11,7 @@ export OSH=/home/arnaldo/.oh-my-bash
 
 # Define o nome do tema a ser carregado. Se definido como "random",
 # um tema aleatório será carregado a cada vez que o oh-my-bash for iniciado
-OSH_THEME="agnoster"
+OSH_THEME="powerline-multiline"
 
 # Descomente a linha abaixo para habilitar a conclusão de comandos com diferenciação entre maiúsculas e minúsculas.
 # CASE_SENSITIVE="true"
@@ -111,3 +111,4 @@ source $OSH/oh-my-bash.sh
 # alias bashconfig="mate ~/.bashrc"
 # alias ohmybash="mate ~/.oh-my-bash"
 alias c9="ssh 192.168.8.209"
+alias python="python3"
