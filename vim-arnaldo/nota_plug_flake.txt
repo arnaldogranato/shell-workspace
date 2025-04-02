@@ -38,7 +38,9 @@ git clone https://github.com/nvie/vim-flake8.git
 
 Explicação:
 
-    O Vim 9 e versões superiores possuem um sistema de pacotes nativo, onde os plugins são instalados dentro da pasta ~/.vim/pack/{nome-do-pacote}/start/, assim fazendo com que o plugin seja iniciado automáticamente quando o vim for aberto.
+    O Vim 9 e versões superiores possuem um sistema de pacotes nativo,
+    onde os plugins são instalados dentro da pasta ~/.vim/pack/{nome-do-pacote}/start/,
+    assim fazendo com que o plugin seja iniciado automáticamente quando o vim for aberto.
 
 Passo 3: Reinicie o Vim
 
@@ -60,9 +62,8 @@ Observações Importantes:
 =========================
 
 
+Aqui está um resumo do uso e das configurações do plugin vim-flake8:
 
-
-Claro, aqui está um resumo do uso e das configurações do plugin vim-flake8 em português:
 
 Uso Básico:
 
