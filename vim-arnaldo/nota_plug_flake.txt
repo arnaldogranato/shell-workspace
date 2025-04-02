@@ -1,0 +1,126 @@
+Passo 1: Instale o Flake8 (Verificação Inicial)
+
+Assim como antes, certifique-se de que o Flake8 esteja instalado no seu sistema.
+
+    Abra o terminal ou prompt de comando.
+    Execute o seguinte comando para instalar o Flake8 usando o pip (ou pip3, se necessário):
+
+Bash
+
+pip install flake8
+
+ou
+Bash
+
+pip3 install flake8
+
+Passo 2: Instalação do Plugin (Vim 9)
+
+O Vim 9 possui um sistema de pacotes integrado que facilita a instalação de plugins. Siga estes passos:
+
+    Crie o diretório de instalação do plugin:
+
+Bash
+
+mkdir -p ~/.vim/pack/flake8/start/
+
+    Navegue até o diretório criado:
+
+Bash
+
+cd ~/.vim/pack/flake8/start/
+
+    Clone o repositório do vim-flake8:
+
+Bash
+
+git clone https://github.com/nvie/vim-flake8.git
+
+Explicação:
+
+    O Vim 9 e versões superiores possuem um sistema de pacotes nativo, onde os plugins são instalados dentro da pasta ~/.vim/pack/{nome-do-pacote}/start/, assim fazendo com que o plugin seja iniciado automáticamente quando o vim for aberto.
+
+Passo 3: Reinicie o Vim
+
+    Feche e abra o Vim novamente para que as alterações sejam aplicadas.
+
+Passo 4: Testando o vim-flake8
+
+    Abra um arquivo Python no Vim.
+    O vim-flake8 deve começar a exibir avisos e erros do Flake8 diretamente no Vim.
+
+Observações Importantes:
+
+    Com o Vim 9, você não precisa mais do vim-pathogen para gerenciar plugins. O sistema de pacotes integrado cuida disso para você.
+    Certifique-se de que o Flake8 esteja no seu PATH.
+    Se você tiver problemas, verifique se os diretórios e arquivos foram criados corretamente.
+
+==========================
+======================
+=========================
+
+
+
+
+Claro, aqui está um resumo do uso e das configurações do plugin vim-flake8 em português:
+
+Uso Básico:
+
+    Verificação de Arquivos Python:
+        Abra um arquivo Python no Vim.
+        Pressione <F7> para executar o Flake8 no arquivo aberto.
+        Os erros e avisos serão exibidos em uma janela de "quickfix", permitindo navegar rapidamente para as linhas problemáticas pressionando [Enter].
+    Remoção de Marcadores:
+        Se as opções g:flake8_show_in_gutter ou g:flake8_show_in_file estiverem ativadas, use o comando:
+            call flake8#Flake8UnplaceMarkers() para remover todos os marcadores.
+
+Personalização:
+
+    Mapeamento de Teclas:
+        Para usar uma tecla diferente de <F7>, remapeie-a no seu arquivo .vimrc. Exemplo para usar <F3>:
+            autocmd FileType python map <buffer> <F3> :call flake8#Flake8()<CR>
+        Para desativar o mapeamento padrão do <F7> use:
+            let g:no_flake8_maps = 1
+    Configurações do Flake8:
+        As configurações do Flake8 devem ser feitas em um arquivo .flake8 na raiz do seu projeto. Consulte a documentação do Flake8 para mais detalhes.
+    Caminho do Executável Flake8:
+        Para especificar o caminho do executável do Flake8, use:
+            let g:flake8_cmd="/opt/strangebin/flake8000"
+    Localização e Altura da Janela Quickfix:
+        Para ajustar a localização da janela Quickfix utilize:
+            let g:flake8_quickfix_location="topleft"
+        Para ajustar a altura da janela quickfix utilize:
+            let g:flake8_quickfix_height=7
+    Exibição da Janela Quickfix:
+        Para controlar se a janela Quickfix é exibida, use:
+            let g:flake8_show_quickfix=0 (não exibir) ou 1 (exibir, padrão).
+    Exibição de Marcadores na Gutter e no Arquivo:
+        Para exibir marcadores na gutter:
+            let g:flake8_show_in_gutter=1
+        Para exibir marcadores no arquivo:
+            let g:flake8_show_in_file=1
+    Número Máximo de Marcadores:
+        Para definir o número máximo de marcadores exibidos:
+            let g:flake8_max_markers=500
+    Personalização de Marcadores:
+        Para personalizar os marcadores da gutter (erros, avisos, etc.), use as variáveis:
+            g:flake8_error_marker, g:flake8_warning_marker, etc.
+            Definir como uma string vazia desativa o marcador.
+    Personalização de Cores:
+        Para personalizar as cores dos marcadores, defina os grupos de highlight:
+            Flake8_Error, Flake8_Warning, etc.
+    Exibição de Mensagem de Erro na Ruler:
+        Para exibir a mensagem de erro da linha atual na ruler, use:
+            nnoremap <C-K> :call flake8#Flake8ShowError()<cr>
+    Execução Automática ao Salvar:
+        Para executar o Flake8 automaticamente ao salvar arquivos Python, adicione ao .vimrc:
+            autocmd BufWritePost *.py call flake8#Flake8()
+    Comprimento Máximo de Linha:
+        Para definir o tamanho máximo de linhas, configure o arquivo .flake8 do projeto.
+
+Histórico:
+
+    O plugin passou por várias atualizações, com melhorias na configuração, exibição de marcadores e funcionalidades adicionais.
+    As versões recentes recomendam o uso do arquivo .flake8 para configurar o flake8, em vez de variaveis globais do vim.
+
+Este resumo cobre os principais aspectos do uso e da personalização do vim-flake8. Se precisar de mais detalhes, me diga!
