@@ -5,7 +5,7 @@ Repositorio oficial: https://github.com/ohmybash/oh-my-bash
 Fonts repo: https://github.com/powerline/fonts
 Agnoster bash: https://github.com/speedenator/agnost-bash 
 
-OSH_THEME="agnoster"
+OSH_THEME="powerline-multiline"
 
 ===========================================================================
 
