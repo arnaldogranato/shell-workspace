@@ -43,12 +43,12 @@ git branch nome_branch                      # - cria uma branch LOCAL
 git branch                                  # - lista as branchs locais
 git branch -a                               # - lista as branchs do repositório (github)
 git checkout nome1_branch                   # - entra na Branch 
+git branch -d nome2_branch                  # - deleta local, (D) maiusculo é sem dó, minuscolo é se houver um merge já ok.
 git merge nome2_branch                      # - unifica a nome2_branch na local (master)
 git rebase nome2_branch                     # - unifica, mas adiciona os commits da branc no historico da master
 git remote -v                               # - Lista os repositórios
 git cherry-pick cod_rach                    # - puxa o commit dessa rach para sua branch atual
 git checkout -b nome_banch cod_rach         # - acessa o backup de uma branch deletada, ai que mora o perigo
-git branch -d nome2_branch                  # - deleta local, (D) maiusculo é sem dó, minuscolo é se houver um merge já ok.
 git push -u nome_repos_git nome_branch              # - cria uma branch que NÃO EXISTE no repositório
 git push -d nome_repos_git nome2_branch             # - deleta a branch do repositório
 git push -u nome_repos_git nome_branch              # - add a branch que NÃO EXISTE no repositório
