@@ -39,16 +39,15 @@ highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Re
 " selecionada ('<,'>)
 vnoremap <C-c> :w !clip.exe<CR>
 
-" -https://github.com/junegunn/vim-plug
+" DOC. https://github.com/junegunn/vim-plug
+" OBS. Para remover plug, DELETE a linha abra o vin novamente e :PlugClean
 call plug#begin()
 Plug 'terryma/vim-multiple-cursors'
 Plug 'jiangmiao/auto-pairs'
-" - Este plugin melhora drasticamente a aparência e a funcionalidade da barra de status do Vim 
-Plug 'vim-airline/vim-airline'
-Plug 'dense-analysis/ale'  " PYTHON, https://github.com/dense-analysis/ale
+Plug 'vim-airline/vim-airline'  " este melhora barra de status
 call plug#end()
 
-" - Este bloco de código é um autocomando que é executado quando o Vim é iniciado (VimEnter). 
+" - ABAIXO é um autocomando que é executado quando o Vim é iniciado (VimEnter). 
 " - Ele verifica se algum dos plugins listados no seu vimrc não foi instalado (ou seja, se o diretório do plugin não existe). 
 " - Se algum plugin estiver faltando, ele executa PlugInstall --sync, que instala os plugins ausentes de forma síncrona (aguardando a conclusão da instalação).
 autocmd VimEnter *
