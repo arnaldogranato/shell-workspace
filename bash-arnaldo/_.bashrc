@@ -1,10 +1,3 @@
-# --- V I R T U A L   E N V   W R A P P E R
-export WORKON_HOME=$HOME/.virtualenvs
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-export VIRTUALENVWRAPPER_VIRTUALENV_ARGS=' -p /usr/bin/python3 '
-export PROJECT_HOME=$HOME/Devel
-source /usr/local/bin/virtualenvwrapper.sh
-
 # --- O H   M Y   B A S H
 # Caminho para a instalação do oh-my-bash.
 export OSH=/home/arnaldo/.oh-my-bash
@@ -112,3 +105,4 @@ source $OSH/oh-my-bash.sh
 # alias ohmybash="mate ~/.oh-my-bash"
 alias c9="ssh 192.168.8.209"
 alias python="python3"
+alias v-a="source /mnt/b/arnaldo-workspace/v-a/bin/activate" 
