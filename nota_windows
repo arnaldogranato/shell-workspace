@@ -18,3 +18,11 @@
 # - VERIFICANDO VERSÃO DO WSL VIA POWERSHELL
 
 wsl -l -v
+
+# - ENCODING PARA UTF-8
+# Alterar a codificação padrão do sistema
+# Se quiser que essa configuração seja aplicada permanentemente:
+# - Para o perfil do PowerShell, adicione este comando ao seu perfil:
+[System.Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+# Verificar se a alteração funcionou
+[System.Console]::OutputEncoding
