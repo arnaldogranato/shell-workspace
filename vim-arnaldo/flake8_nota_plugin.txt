@@ -1,5 +1,6 @@
 Passo 1: Instale o Flake8 (Verificação Inicial)
 
+<<<<<<< HEAD:vim-arnaldo/flake8_nota_plugin.txt
     Execute o seguinte comando para instalar o Flake8 usando o pip (ou pip3, se necessário):
 
 python3 --version
@@ -23,6 +24,26 @@ cd ~/.vim/pack/flake8/start/
     Clone o repositório do vim-flake8:
 
 git clone https://github.com/nvie/vim-flake8.git
+=======
+Certifique-se de que o Flake8 esteja instalado no seu sistema.
+
+Para instalar o Flake8 usando o pip (ou pip3, se necessário):
+    pip install flake8
+
+
+============================================================
+Passo 2: Instalação do Plugin (Vim 9)
+
+O Vim 9 possui um sistema de pacotes integrado que facilita a instalação de plugins. Siga estes passos:
+    Crie o diretório de instalação do plugin:
+        mkdir -p ~/.vim/pack/flake8/start/
+
+    Navegue até o diretório criado:
+        cd ~/.vim/pack/flake8/start/
+
+    Clone o repositório do vim-flake8:
+        git clone https://github.com/nvie/vim-flake8.git
+>>>>>>> e5f60d9d11aaa0c26d7d7f5e20014efd2079b3c9:vim-arnaldo/nota_plug_flake.txt
 
 Explicação:
 
@@ -46,10 +67,7 @@ Observações Importantes:
     Se você tiver problemas, verifique se os diretórios e arquivos foram criados corretamente.
 
 ==========================
-======================
 =========================
-
-
 Aqui está um resumo do uso e das configurações do plugin vim-flake8:
 
 
