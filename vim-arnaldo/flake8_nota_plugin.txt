@@ -6,8 +6,10 @@ Assim como antes, certifique-se de que o Flake8 esteja instalado no seu sistema.
     Execute o seguinte comando para instalar o Flake8 usando o pip (ou pip3, se necessário):
 
 Bash
-
-pip install flake8
+python3 --version
+sudo apt update
+sudo apt install python3-pip
+pip3 install flake8
 
 ou
 Bash
