@@ -10,17 +10,6 @@ Você está usando o gerenciador de plugins vim-plug. Vamos analisar o que cada 
 
     Plug 'vim-airline/vim-airline': Este plugin melhora drasticamente a aparência e a funcionalidade da barra de status do Vim (a linha na parte inferior da janela). Ele exibe informações úteis como o modo atual do Vim (Normal, Inserção, Visual, etc.), o nome do arquivo, a codificação, o tipo de arquivo, a posição do cursor, informações do Git (se aplicável) e muito mais. É altamente configurável e oferece temas para personalizar sua aparência.
 
-    Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }: Este plugin fornece um ambiente de desenvolvimento integrado (IDE) básico para Python dentro do Vim. Ele oferece recursos como:
-        Destaque de sintaxe aprimorado para Python.
-        Indentação automática.
-        Verificação de sintaxe em tempo real (com Pyflakes ou outros linters).
-        Execução de código Python dentro do Vim.
-        Integração com depuradores (como pdb).
-        Preenchimento automático de código.
-        Documentação rápida (com K).
-
-    A opção { 'for': 'python', 'branch': 'develop' } especifica que este plugin deve ser carregado apenas para arquivos Python e usa o branch develop do repositório, o que pode incluir recursos mais recentes, mas também pode ser menos estável.
-
 # - R E Q U I S I T O S
 
 1. Criar o diretório para o vim-plug (se necessário):
