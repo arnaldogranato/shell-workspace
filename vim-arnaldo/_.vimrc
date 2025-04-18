@@ -13,6 +13,11 @@ set backup
 set backupdir=/var/tmp/
 " Adiciona a data e hora ao nome do arquivo de backup
 let &backupext = '.' . strftime('%Y%m%d%H%M%S')
+let &t_SI = "\e[5 q" " Cursor piscante (barra vertical) em modo inserção
+let &t_SR = "\e[5 q" " Cursor piscante (barra vertical) em modo substituição
+let &t_EI = "\e[1 q" " Cursor piscante (bloco) em modo normal
+autocmd VimLeave * silent !echo -ne "\e[0 q"
+autocmd FileType python map <buffer> <C-k> :call flake8#Flake8()<CR>  " atalho flake8 Ctrl+K
 " set writebackup
 " set backupcopy=yes
 
