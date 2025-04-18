@@ -127,7 +127,12 @@ Personalização:
 
 Histórico:
 
-    O plugin passou por várias atualizações, com melhorias na configuração, exibição de marcadores e funcionalidades adicionais.
-    As versões recentes recomendam o uso do arquivo .flake8 para configurar o flake8, em vez de variaveis globais do vim.
+    -adotei em meu .vimrc o formato Ctrl+k
 
-Este resumo cobre os principais aspectos do uso e da personalização do vim-flake8. Se precisar de mais detalhes, me diga!
+autocmd FileType python map <buffer> <C-k> :call flake8#Flake8()<CR>
+
+    -Explicando:
+autocmd FileType python: Garante que o mapeamento só se aplique a arquivos Python.
+map <buffer>: Define o mapeamento apenas para o buffer atual.
+<C-k>: Representa a combinação de teclas Ctrl+l.
+:call flake8#Flake8()<CR>: Executa a função do plugin Flake8 para revisar o código.
