@@ -26,6 +26,8 @@ ps -efaa|grep nomeDoUsuario|wc -l  # - Conta quantos processos um usuário está
 ps -xa |grep nomeDoServicoOuRobo  # - Verifica se um serviço está em execução.
 ps -aux | sort -k 4 -r | head -n 2  # - Mostra os processos que mais consomem memória.
 htop  # - Monitora processos de forma mais amigável.
+cat /var/log/mail.log | mutt -s“Teste” – seuemail@email.com.br  # - Testa envio de e-mail do servidor
+
 
     COMANDOS DE ARQUIVO
 
@@ -161,11 +163,3 @@ smbmount / /192.168.1.102/DIRWINDOWS /mnt/smb/DIRLINUX -o username=nome_usuario,
     -o password=minha_senha  # - Define a senha para autenticação no compartilhamento.
     -o  # - Especifica opções adicionais de montagem.
 "
-==============================================================================
-
-    OUTROS
-
-locate = localiza arquivos
-updatedb = atualiza arquivos na base do locate.
-
-
