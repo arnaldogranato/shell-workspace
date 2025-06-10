@@ -90,8 +90,10 @@ unzip arquivo.zip  # - Descomprime um arquivo ZIP.
     GERENCIAMENTO DO SISTEMA
 
 sudo fail2ban-client -i  # - Acessa o cliente do Fail2ban para gerenciar o sistema de proteção contra ataques.
-    > status ssh  # - Mostra o status do log do Fail2ban para SSH e IPs banidos, ha outros Jail list: apache-404, apache-badbots, apache-overflows, ssh.
+    > status # - Jail list: apache-404, apache-badbots, apache-overflows, ssh.
+    > status ssh  # - Mostra o status do log do Fail2ban para SSH e IPs banidos
     > set ssh unbanip 200.222.222.222  # - Desban um IP específico do Fail2ban.
+    > exit # - sair
 
     AUTOMAÇÃO DE TAREFAS
 
