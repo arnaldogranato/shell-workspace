@@ -26,3 +26,6 @@ wsl -l -v
 [System.Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 # Verificar se a alteração funcionou
 [System.Console]::OutputEncoding
+
+#Criando link de diretório:
+PS C:\Users\arnal\Desktop> New-Item -ItemType SymbolicLink -Path "C:\Users\arnal\Desktop\arnaldo-workspace" -Target "B:\arnaldo-workspace"
