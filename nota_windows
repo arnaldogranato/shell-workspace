@@ -29,3 +29,40 @@ wsl -l -v
 
 #Criando link de diretório:
 PS C:\Users\arnal\Desktop> New-Item -ItemType SymbolicLink -Path "C:\Users\arnal\Desktop\arnaldo-workspace" -Target "B:\arnaldo-workspace"
+
+
+
+#Criando venv
+python -m venv nome-venv
+
+#Ativando venv
+.\nome-venv\Scripts\Activate.ps1
+
+#OBS com acesso ADM Mude a política de execução.
+Set-ExecutionPolicy RemoteSigned
+
+
+#Criando um alises no powershell
+
+#Verifique se o arquivo de perfil existe
+Test-Path $PROFILE
+
+#se false:
+New-Item -Path $PROFILE -ItemType File -Force
+
+#Edite o arquivo C:\Users\arnal\OneDrive\Documents\WindowsPowerShell:
+notepad $PROFILE
+
+#Exemplo:
+function nome-venv {
+    # Navega para a pasta Scripts da sua VENV
+    cd C:\Users\arnal\Desktop\arnaldo-workspace\nome-venv\Scripts
+
+    # Executa o script de ativação
+    .\Activate.ps1
+
+    # Opcional: Navega de volta para a pasta raiz do projeto após ativar
+    cd C:\Users\arnal\Desktop\arnaldo-workspace
+}
+# Cria um alias 'nv' para que você também possa usar 'nv' (mais rápido)
+Set-Alias -Name nv -Value nome-venv
