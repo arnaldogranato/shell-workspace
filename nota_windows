@@ -38,7 +38,9 @@ python -m venv nome-venv
 #Ativando venv
 .\nome-venv\Scripts\Activate.ps1
 
-#OBS com acesso ADM Mude a política de execução.
+#OBS Às vezes, o PowerShell pode bloquear a execução de scripts locais. Se isso acontecer, você pode precisar mudar a política de execução.
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
+#ou
 Set-ExecutionPolicy RemoteSigned
 
 
