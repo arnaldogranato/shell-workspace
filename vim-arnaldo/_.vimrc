@@ -65,7 +65,11 @@ call plug#begin()
 Plug 'terryma/vim-multiple-cursors'
 Plug 'jiangmiao/auto-pairs'
 Plug 'vim-airline/vim-airline'  " este melhora barra de status
+Plug 'mechatroner/rainbow_csv'
 call plug#end()
+
+" === IDENTIFICA SEPARADOR CSV ===
+autocmd BufNewFile,BufRead *.csv set filetype=csv_semicolon
 
 " - ABAIXO é um autocomando que é executado quando o Vim é iniciado (VimEnter). 
 " - Ele verifica se algum dos plugins listados no seu vimrc não foi instalado (ou seja, se o diretório do plugin não existe). 
