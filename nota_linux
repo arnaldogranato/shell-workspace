@@ -50,6 +50,8 @@ cat |grep -i TeXtO  # - Lista linhas de um arquivo que contêm um texto específ
 grep -P 'ERROS.  # - (?!0)' arq.txt  # - Mostra linhas que contêm "ERROS.:" sem o número "0".
 lsof nomeDoDiretório  # - Mostra quem está usando um diretório.
 base64 -d < /var/tmp/nomeArquivo  # - Decodifica base64.
+echo -n "texto" | base64  # - Para codificar (Texto)
+echo "dGV4dG8=" | base64 -d  # - Para Decodificar (Texto)
 tar xzf nomedoarquivo.tar  # - Descomprime um arquivo compactado.
 tar czf nomedoarquivo.tar.gz dirxpt/  # - Compacta um diretório.
 gzip/gunzip # - Ferramentas para compactar e descompactar arquivos no formato gzip./
