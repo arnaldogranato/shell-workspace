@@ -211,67 +211,65 @@ Você pode mudar o comportamento do Vim na hora (`:` antes do comando) ou deixar
 *   `ctrl+z`: Suspende o Vim e volta pro terminal (use `fg` pra voltar pro Vim).
 *   `:help [comando]`: Abre a ajuda do Vim pra um comando específico (ex: `:help wq`). Essencial!
 
+---
 ## 12. Outros
 
-Com base nos arquivos fornecidos, preparei um complemento em Markdown contendo os comandos e configurações presentes no **"nota_vim.txt"** que não foram incluídos no seu **"Guia Rápido de Comandos Essenciais"**.
-
----
 
 ## Comandos Adicionais e Avançados do Vim
 
 Este guia complementa o essencial com funções de personalização, manipulação de texto via regex e truques de produtividade.
 
 ### 1. Opções de Inicialização e Segurança
-*   **-h**: Exibe todas as opções de inicialização do aplicativo.
-*   **-R**: Abre o arquivo em modo apenas leitura (similar ao `view`).
-*   **:X**: Permite criptografar o arquivo atual com uma senha.
+*   `-h`: Exibe todas as opções de inicialização do aplicativo.
+*   `-R`: Abre o arquivo em modo apenas leitura (similar ao `view`).
+*   `:X`: Permite criptografar o arquivo atual com uma senha.
 
 ### 2. Navegação e Repetição
-*   **CTRL+B / CTRL+F**: Rola a tela uma página inteira para trás ou para frente, respectivamente.
-*   **F1**: Abre a tela de ajuda padrão do Vim.
-*   **[n]+ENTER**: Move o cursor para *n* linhas abaixo da posição atual.
-*   **[n]+.**: Repete o último comando de alteração de texto *n* vezes.
+*   `CTRL+B / CTRL+F`: Rola a tela uma página inteira para trás ou para frente, respectivamente.
+*   `F1`: Abre a tela de ajuda padrão do Vim.
+*   `[n]+ENTER**: Move o cursor para *n* linhas abaixo da posição atual.
+*   ``[n]+.**: Repete o último comando de alteração de texto *n* vezes.
 
 ### 3. Manipulação Avançada de Texto (Case e Formatação)
 Além do comando `~`, você pode usar:
-*   **Vu / VU**: Torna todos os caracteres da linha atual minúsculos ou maiúsculos.
-*   **g~~**: Inverte a caixa (maiúscula/minúscula) de todo o texto do arquivo.
-*   **vEU**: Coloca as letras da palavra selecionada em maiúsculas.
-*   **ggguG**: Converte o texto inteiro do arquivo para minúsculas.
-*   **ggVGg?**: Aplica a cifra Rot13 ao texto selecionado.
-*   **Ctrl+a / Ctrl+x**: Incrementa ou decrementa o número sob o cursor.
+*   ´Vu / VU´: Torna todos os caracteres da linha atual minúsculos ou maiúsculos.
+*   ´g~~´: Inverte a caixa (maiúscula/minúscula) de todo o texto do arquivo.
+*   ´vEU´: Coloca as letras da palavra selecionada em maiúsculas.
+*   ´ggguG´: Converte o texto inteiro do arquivo para minúsculas.
+*   ´ggVGg?´: Aplica a cifra Rot13 ao texto selecionado.
+*   ´Ctrl+a / Ctrl+x´: Incrementa ou decrementa o número sob o cursor.
 
 ### 4. Busca e Substituição com Expressões Regulares
-*   **:v/palavra/d**: Apaga todas as linhas que **não** contenham a "palavra".
-*   **:%s#<[^>]\+>##g**: Remove todas as tags HTML, preservando apenas o conteúdo textual.
-*   **:%s/^\(.*\)\n\1$ /\1/**: Localiza e remove linhas consecutivas repetidas.
-*   **:%s/\r//g**: Remove retornos de carro (`\r`) típicos de arquivos criados no Windows.
-*   **:%s/<./\u&/g**: Converte a primeira letra de cada palavra para maiúscula.
+*   ´:v/palavra/d´: Apaga todas as linhas que ´não´ contenham a "palavra".
+*   ´:%s#<[^>]\+>##g´: Remove todas as tags HTML, preservando apenas o conteúdo textual.
+*   ´:%s/^\(.*\)\n\1$ /\1/´: Localiza e remove linhas consecutivas repetidas.
+*   ´:%s/\r//g´: Remove retornos de carro (`\r`) típicos de arquivos criados no Windows.
+*   ´:%s/<./\u&/g´: Converte a primeira letra de cada palavra para maiúscula.
 
 ### 5. Explorando o Sistema e Gerenciamento de Arquivos
-*   **:Sex**: Divide a janela horizontalmente e abre o explorador de arquivos integrado.
-*   **:browse e**: Abre o gerenciador de arquivos na janela atual.
-*   **:cd ..**: Sobe um nível na árvore de diretórios do sistema.
-*   **:args**: Lista os arquivos que foram passados como argumento na abertura do Vim.
-*   **:grep expressao *.php**: Busca uma expressão em todos os arquivos .php e retorna a lista.
-*   **!!pwd**: Executa o comando `pwd` do sistema e insere o caminho resultante diretamente no texto.
-*   **:sh**: Sai temporariamente para o terminal (use `exit` para retornar ao Vim).
+*   ´:Sex´: Divide a janela horizontalmente e abre o explorador de arquivos integrado.
+*   ´:browse e´: Abre o gerenciador de arquivos na janela atual.
+*   ´:cd ..´: Sobe um nível na árvore de diretórios do sistema.
+*   ´:args´: Lista os arquivos que foram passados como argumento na abertura do Vim.
+*   ´:grep expressao *.php´: Busca uma expressão em todos os arquivos .php e retorna a lista.
+*   ´!!pwd´: Executa o comando `pwd` do sistema e insere o caminho resultante diretamente no texto.
+*   ´:sh´: Sai temporariamente para o terminal (use `exit` para retornar ao Vim).
 
 ### 6. Janelas, Buffers e Marcações
-*   **ctrl-w_**: Maximiza a janela atual verticalmente.
-*   **ctrl-w=**: Reajusta todas as janelas abertas para terem o mesmo tamanho.
-*   **:sview arquivo**: Abre um arquivo em uma nova divisão, mas em modo somente leitura.
-*   **:only**: Fecha todas as janelas abertas, mantendo apenas a atual.
-*   **:b 2**: Muda para o buffer número 2 na janela ativa.
-*   **mk / 'k**: Define uma marca na posição atual chamada "k" e permite pular para ela depois.
-*   **dk**: Apaga todo o conteúdo desde a posição do cursor até a marca "k".
+*   ´ctrl-w_´: Maximiza a janela atual verticalmente.
+*   ´ctrl-w=´: Reajusta todas as janelas abertas para terem o mesmo tamanho.
+*   ´:sview arquivo´: Abre um arquivo em uma nova divisão, mas em modo somente leitura.
+*   ´:only´: Fecha todas as janelas abertas, mantendo apenas a atual.
+*   ´:b 2´: Muda para o buffer número 2 na janela ativa.
+*   ´mk / 'k´: Define uma marca na posição atual chamada "k" e permite pular para ela depois.
+*   ´dk´: Apaga todo o conteúdo desde a posição do cursor até a marca "k".
 
 ### 7. Configurações de Interface e Ferramentas
-*   **:set termencoding=iso-8859-1**: Define a codificação do terminal.
-*   **:set guioptions-=T**: Remove a barra de ferramentas (toolbar) da interface gráfica.
-*   **:set pumheight=15**: Define o número máximo de itens exibidos no menu de autocomplete.
-*   **:set completeopt=menu,preview**: Configura como as sugestões de inserção são exibidas.
-*   **:ab email me@me.com**: Cria uma abreviação; ao digitar "email" e espaço, ele expande para o endereço.
-*   **:%!python -m json.tool**: Utiliza o Python para formatar (identar) um arquivo JSON que esteja em uma única linha.
-*   **:set syntax=perl**: Força o realce de sintaxe para uma linguagem específica.
+*   ´:set termencoding=iso-8859-1´: Define a codificação do terminal.
+*   ´:set guioptions-=T´: Remove a barra de ferramentas (toolbar) da interface gráfica.
+*   ´:set pumheight=15´: Define o número máximo de itens exibidos no menu de autocomplete.
+*   ´:set completeopt=menu,preview´: Configura como as sugestões de inserção são exibidas.
+*   ´:ab email me@me.com´: Cria uma abreviação; ao digitar "email" e espaço, ele expande para o endereço.
+*   ´:%!python -m json.tool´: Utiliza o Python para formatar (identar) um arquivo JSON que esteja em uma única linha.
+*   ´:set syntax=perl´: Força o realce de sintaxe para uma linguagem específica.
 ---
