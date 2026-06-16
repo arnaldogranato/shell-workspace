@@ -231,7 +231,7 @@ Este guia complementa o essencial com funções de personalização, manipulaç�
 *   `[n]+.`: Repete o último comando de alteração de texto *n* vezes.
 
 ### 3. Manipulação Avançada de Texto (Case e Formatação)
-Além do comando `~`, você pode usar:
+Além do comando *~*, você pode usar:
 *   ´Vu / VU´: Torna todos os caracteres da linha atual minúsculos ou maiúsculos.
 *   ´g``~~´: Inverte a caixa (maiúscula/minúscula) de todo o texto do arquivo.
 *   ´vEU´: Coloca as letras da palavra selecionada em maiúsculas.
