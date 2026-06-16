@@ -227,13 +227,13 @@ Este guia complementa o essencial com funções de personalização, manipulaç�
 ### 2. Navegação e Repetição
 *   `CTRL+B / CTRL+F`: Rola a tela uma página inteira para trás ou para frente, respectivamente.
 *   `F1`: Abre a tela de ajuda padrão do Vim.
-*   `[n]+ENTER**: Move o cursor para *n* linhas abaixo da posição atual.
-*   ``[n]+.**: Repete o último comando de alteração de texto *n* vezes.
+*   `[n]+ENTER`: Move o cursor para *n* linhas abaixo da posição atual.
+*   `[n]+.`: Repete o último comando de alteração de texto *n* vezes.
 
 ### 3. Manipulação Avançada de Texto (Case e Formatação)
 Além do comando `~`, você pode usar:
 *   ´Vu / VU´: Torna todos os caracteres da linha atual minúsculos ou maiúsculos.
-*   ´g~~´: Inverte a caixa (maiúscula/minúscula) de todo o texto do arquivo.
+*   ´g``~~´: Inverte a caixa (maiúscula/minúscula) de todo o texto do arquivo.
 *   ´vEU´: Coloca as letras da palavra selecionada em maiúsculas.
 *   ´ggguG´: Converte o texto inteiro do arquivo para minúsculas.
 *   ´ggVGg?´: Aplica a cifra Rot13 ao texto selecionado.
@@ -242,7 +242,7 @@ Além do comando `~`, você pode usar:
 ### 4. Busca e Substituição com Expressões Regulares
 *   ´:v/palavra/d´: Apaga todas as linhas que ´não´ contenham a "palavra".
 *   ´:%s#<[^>]\+>##g´: Remove todas as tags HTML, preservando apenas o conteúdo textual.
-*   ´:%s/^\(.*\)\n\1$ /\1/´: Localiza e remove linhas consecutivas repetidas.
+*   ´:%s/^\(.`*`\)\n\1$ /\1/´: Localiza e remove linhas consecutivas repetidas.
 *   ´:%s/\r//g´: Remove retornos de carro (`\r`) típicos de arquivos criados no Windows.
 *   ´:%s/<./\u&/g´: Converte a primeira letra de cada palavra para maiúscula.
 
