@@ -100,25 +100,25 @@ E aí, galera! Esse é um guia rápido e direto pra você que usa Linux no dia a
 ## Comandos de Sobrevivência (Pra não entrar em pânico!)
 
 *   **Ver quem está usando uma porta:**
-    ```bash
+```bash
 sudo lsof -i :8080 # Troque 8080 pela porta que você quer verificar
-    ```
+```
 *   **Matar um processo travado (se `kill` não funcionar):**
-    ```bash
+```bash
 sudo kill -9 PID # O -9 é pra forçar a parada, use com cautela!
-    ```
+```
 *   **Ver o espaço em disco de forma mais detalhada:**
-    ```bash
+```bash
 df -h # Mais fácil de ler que o -vh
-    ```
+```
 *   **Reiniciar o sistema (com segurança):**
-    ```bash
+```bash
 sudo reboot
-    ```
+```
 *   **Desligar o sistema (com segurança):**
-    ```bash
+```bash
 sudo shutdown -h now
-    ```
+```
 
 ## OUTROS
 
@@ -132,6 +132,7 @@ sudo shutdown -h now
 *   **`find / -type f -name`**: Uma variação do comando `find` que localiza apenas arquivos (excluindo diretórios) com um nome específico.
 *   **`find arquivos/ -xdev -printf '%h\n' | sort | uniq -c | sort -k 1 -n`**: Um comando complexo para gerar um ranking de consumo de **inodes** no sistema de arquivos.
 *   **`grep -P`**: Uso do `grep` com Expressões Regulares Perl (Perl-Compatible Regular Expressions) para buscas textuais mais complexas.
+*   **`grep -a "texto_busca" nome_arquivo_tipoNonISOextendedASCII`**: Use a flag -a (ou --text) para forçar a leitura
 
 ### 3. Comunicação e Mensagens do Sistema
 *   **`cat /var/log/mail.log | mutt`**: Uma sequência de comandos para testar o envio de e-mails diretamente do servidor.
