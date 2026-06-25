@@ -133,6 +133,7 @@ sudo shutdown -h now
 *   **`find arquivos/ -xdev -printf '%h\n' | sort | uniq -c | sort -k 1 -n`**: Um comando complexo para gerar um ranking de consumo de **inodes** no sistema de arquivos.
 *   **`grep -P`**: Uso do `grep` com Expressões Regulares Perl (Perl-Compatible Regular Expressions) para buscas textuais mais complexas.
 *   **`grep -a "texto_busca" nome_arquivo_tipoNonISOextendedASCII`**: Use a flag -a (ou --text) para forçar a leitura
+*   **` sed -n '1p' 260625114717069300667_cef240.txt | cut -c 164-166`**: Exibe o conteudo de uma posição de um arquivo texto, como um cat com posição de linha e colunas dos caracteres.
 
 ### 3. Comunicação e Mensagens do Sistema
 *   **`cat /var/log/mail.log | mutt`**: Uma sequência de comandos para testar o envio de e-mails diretamente do servidor.
