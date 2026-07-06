@@ -19,8 +19,8 @@ E aí, galera! Esse é um guia rápido e direto pra você que usa Linux no dia a
 *   `wireshark`: A versão gráfica do `tcpdump`, mais amigável pra analisar tráfego.
 *   `dig`: Pra fazer umas perguntas mais detalhadas pro DNS.
 *   `curl ifconfig.me`: Descobre qual é o seu IP externo rapidão.
-*   `sudo ufw app list`: Lista os apps que estão usando o firewall UFW.
-*   `iptables -D INPUT -s 999.999.999.999 -j DROP`: Desbloqueia um IP que foi banido (troque o IP pelo certo!).
+*   `sudo ufw app list`: Lista os aplicativos que estão usando o firewall UFW.
+*   `iptables -D INPUT -s 0.0.0.0 -j DROP`: Desbloqueia um IP que foi banido (troque o IP pelo certo!).
 
 ## 2. Processos (Pra ver quem tá vivo e quem tá gastando)
 
@@ -83,7 +83,7 @@ E aí, galera! Esse é um guia rápido e direto pra você que usa Linux no dia a
 *   `sudo fail2ban-client -i`: Entra no cliente do Fail2ban (pra gerenciar IPs banidos).
     *   `status`: Lista as "cadeias" ativas (tipo `ssh`, `apache`).
     *   `status ssh`: Vê quem foi banido do SSH.
-    *   `set ssh unbanip 200.222.222.222`: Desbane um IP (troque pelo IP certo!).
+    *   `set ssh unbanip 0.0.0.0`: Desbane um IP (troque pelo IP certo!).
     *   `exit`: Pra sair do cliente Fail2ban.
 
 ## 7. Automação e Processamento de Texto (Pra fazer o computador trabalhar pra você)
@@ -126,6 +126,7 @@ sudo shutdown -h now
 *   **`ssh -X -Y usuário@máquina`**: Utilizado para acessar um servidor remoto permitindo a visualização gráfica via XQuartz.
 *   **`route add -net`**: Comando para adicionar manualmente uma rota de rede específica.
 *   **`nmap -v localhost`**: Ferramenta para escanear e listar as portas abertas no servidor local.
+*   **`ssh -oHostKeyAlgorithms=+ssh-rsa usr@0.0.0.0`**: Quando Unable to negotiate with 0.0.0.0 port 22: no matching host key type found. Their offer: ssh-rsa,ssh-dss
 
 ### 2. Manipulação de Arquivos e Busca Avançada
 *   **`tile`**: Comando indicado para mostrar a formatação de um arquivo.
