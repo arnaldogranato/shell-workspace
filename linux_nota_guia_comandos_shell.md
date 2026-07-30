@@ -52,9 +52,6 @@ E aí, galera! Esse é um guia rápido e direto pra você que usa Linux no dia a
 *   `lsof nome_do_diretorio`: Mostra quem está usando um diretório (qual processo).
 *   `base64 -d < arquivo_codificado`: Decodifica um arquivo em base64.
 *   `echo -n "texto" | base64`: Codifica um texto em base64.
-*   `tar xzf arquivo.tar.gz`: Descompacta um arquivo `.tar.gz`.
-*   `tar czf saida.tar.gz pasta_para_compactar/`: Compacta uma pasta em `.tar.gz`.
-*   `gzip/gunzip`: Pra compactar e descompactar arquivos `.gz`.
 *   `pdftk arquivo_grande.pdf burst`: Separa um PDF em várias páginas.
 *   `pdftk 1.pdf 2.pdf cat output final.pdf`: Junta vários PDFs em um só.
 *   `convert imagem.jpg saida.gif`: Converte uma imagem de um formato para outro (precisa do ImageMagick).
@@ -142,6 +139,10 @@ sudo shutdown -h now
 ### 4. Compactação e Descompactação
 *   **`unzip`**: Comando específico para descompactar arquivos no formato `.zip`, que não havia sido listado no guia original (que focava em `tar` e `gzip`).
 *   **`tar` (descrição geral)**: Embora o guia liste o uso prático, as notas trazem a definição do `tar` como uma ferramenta geral para manipular, criar e visualizar arquivos de arquivo.
+*   **`tar xzf arquivo.tar.gz`**: Descompacta um arquivo `.tar.gz`.
+*   **`tar czf saida.tar.gz pasta_para_compactar/`**: Compacta uma pasta em `.tar.gz`.
+*   **`tar -I zstd -xf nome_arquivo.tar.zst`**: Descompacta um arquivo `.tar.zst`.
+*   **`gzip/gunzip`**: Pra compactar e descompactar arquivos `.gz`.
 
 ### 5. Montagem de Partições e Dispositivos
 *   **`mount` e `umount` (genéricos)**: As notas listam os comandos genéricos para montar e desmontar sistemas de arquivos, enquanto o guia foca especificamente no `mount.cifs`.
