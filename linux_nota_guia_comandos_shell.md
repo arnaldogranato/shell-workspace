@@ -52,6 +52,7 @@ E aí, galera! Esse é um guia rápido e direto pra você que usa Linux no dia a
 *   `lsof nome_do_diretorio`: Mostra quem está usando um diretório (qual processo).
 *   `base64 -d < arquivo_codificado`: Decodifica um arquivo em base64.
 *   `echo -n "texto" | base64`: Codifica um texto em base64.
+*   `echo -n "texto" | base64 -d`: Decodifica um texto em base64.
 *   `pdftk arquivo_grande.pdf burst`: Separa um PDF em várias páginas.
 *   `pdftk 1.pdf 2.pdf cat output final.pdf`: Junta vários PDFs em um só.
 *   `convert imagem.jpg saida.gif`: Converte uma imagem de um formato para outro (precisa do ImageMagick).
