@@ -118,6 +118,13 @@ Para ativar o ambiente virtual no PowerShell:
 ```powershell
 .\nome-venv\Scripts\Activate.ps1
 ```
+OU um aliases:
+`
+function v-w { 
+    Set-Location "C:\Users\arnal\Desktop\arnaldo-workspace\python-workspace"
+    & "C:\Users\arnal\Desktop\arnaldo-workspace\v-w\Scripts\Activate.ps1" 
+}
+`
 
 ### 6.3. Solução de Problemas: Política de Execução do PowerShell
 
@@ -183,6 +190,7 @@ O arquivo `hosts` do Windows pode ser usado para bloquear o acesso a sites espec
 
     Salve e feche o arquivo. O bloqueio deve ser imediato.
 
+4. **OU DIRETO NO POWERSHELL** Add-Content -Path "$env:WinDir\System32\drivers\etc\hosts" -Value "`n127.0.0.1 mcafee.com`n127.0.0.1 www.mcafee.com"
 
 ## Solução de Problemas Comuns
 
